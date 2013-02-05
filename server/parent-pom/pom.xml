@@ -194,6 +194,11 @@
             <artifactId>hibernate-annotations</artifactId>
             <version>${hibernate-annotations.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate-entitymanager.version}</version>
+        </dependency>
     </dependencies>
 
     
@@ -259,6 +264,7 @@
         <mysqldriver.version>5.1.21</mysqldriver.version>
         <hibernate-annotations.version>3.4.0.GA</hibernate-annotations.version>
         <hibernate-core.version>3.3.2.GA</hibernate-core.version>
+        <hibernate-entitymanager.version>3.4.0.GA</hibernate-entitymanager.version>
 
     </properties>
 

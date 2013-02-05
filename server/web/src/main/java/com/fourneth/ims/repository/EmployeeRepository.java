@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface EmployeeRepository {
 
-    public Employee save(Employee e);
+    public void save(Employee e);
 
     public void update(Employee e);
 
     public void delete(Employee e);
 
-    Employee findById(String id);
+    Employee findById(int id);
 
     List<Employee> findAll();
 }

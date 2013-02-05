@@ -6,9 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,24 +20,23 @@ public class SampleController {
     @Autowired
     private EmployeeRepository er;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/employee/{id}", headers = "Accept=application/json")
-    public @ResponseBody
-    Employee employee(String id) {
-        logger.info("Employee get request received.....");
+    @RequestMapping(method = RequestMethod.GET, value = "/employee/{id}", produces = "application/json")
+    public @ResponseBody Employee employee(@PathVariable int id) {
+
+        logger.info("Employee get request received id [{}]", id);
 
         return er.findById(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/employee/", headers = "Accept=application/json")
-    public Employee create(Employee e) {
-        return er.save(e);
+    @RequestMapping(method = RequestMethod.PUT, value = "/employee/",
+            consumes = "application/json", produces = "application/json")
+    public void create(@RequestBody Employee e) {
+        er.save(e);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/employees", headers = "Accept=application/json")
-    public @ResponseBody
-    List<Employee> findAll() {
+    @RequestMapping(method = RequestMethod.GET, value = "/employees", produces = "application/json")
+    public @ResponseBody List<Employee> findAll() {
         logger.info("Employee get request received.....");
-
         return er.findAll();
     }
 }

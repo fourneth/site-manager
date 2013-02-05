@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -22,34 +24,31 @@ import java.util.List;
 @Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.DEFAULT)
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
-    @Autowired
-    private SessionFactory sf;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Override
-    public Employee save(Employee e) {
-        return (Employee) sf.getCurrentSession().save(e);
+    public void save(Employee e) {
+        entityManager.persist(e);
     }
 
     @Override
     public void update(Employee e) {
-        sf.getCurrentSession().update(e);
+        entityManager.persist(e);
     }
 
     @Override
     public void delete(Employee e) {
-        sf.getCurrentSession().delete(e);
+        entityManager.remove(e);
     }
 
     @Override
-    public Employee findById(String id) {
-        return (Employee) sf.getCurrentSession().createQuery(
-                "from Employee e where e.id=?").setParameter(0, id)
-                .uniqueResult();
+    public Employee findById(int id) {
+        return entityManager.find(Employee.class, id);
     }
 
     @Override
     public List<Employee> findAll() {
-        return (List<Employee>) sf.getCurrentSession().createQuery(
-                "from Employee").list();
+        return entityManager.createQuery("select e from EMPLOYEE e").getResultList();
     }
 }

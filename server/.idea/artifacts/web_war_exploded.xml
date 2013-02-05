@@ -76,6 +76,7 @@
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-annotations:3.4.0.GA" />
           <element id="library" level="project" name="Maven: org.hibernate:ejb3-persistence:1.0.2.GA" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-commons-annotations:3.1.0.GA" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:3.4.0.GA" />
         </element>
       </element>
     </root>
