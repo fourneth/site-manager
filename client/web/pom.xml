@@ -11,13 +11,13 @@
         <relativePath>../../parent-pom/pom.xml</relativePath>
     </parent>
 
-    <artifactId>ims</artifactId>
+    <artifactId>imsui</artifactId>
     <packaging>war</packaging>
-    <name>ims</name>
+    <name>imsui</name>
 
     <build>
-        <finalName>ims</finalName>
-    <plugins>
+        <finalName>imsui</finalName>
+<plugins>
         <plugin>
       <!-- run "mvn hibernate3:hbm2ddl" to generate a schema -->
       <groupId>org.codehaus.mojo</groupId>

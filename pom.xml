@@ -7,17 +7,19 @@
         <groupId>com.fourneth</groupId>
         <artifactId>parent-pom</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../parent-pom/pom.xml</relativePath>
+        <relativePath>parent-pom/pom.xml</relativePath>
     </parent>
 
     <packaging>pom</packaging>
 
-    <artifactId>server</artifactId>
+    <artifactId>top-level-pom</artifactId>
 
-    <name>ims server</name>
+    <name>ims-system</name>
     <url>http://www.leapset.com</url>
 
     <modules>
-        <module>web</module>
+        <module>parent-pom</module>
+        <module>server</module>
+        <module>client</module>
     </modules>
 </project>

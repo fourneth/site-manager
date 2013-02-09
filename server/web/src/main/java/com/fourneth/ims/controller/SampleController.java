@@ -30,8 +30,10 @@ public class SampleController {
 
     @RequestMapping(method = RequestMethod.PUT, value = "/employee/",
             consumes = "application/json", produces = "application/json")
-    public void create(@RequestBody Employee e) {
+    public Employee create(@RequestBody Employee e) {
+        logger.info("Employee create request received [{}]", e);
         er.save(e);
+        return e;
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/employees", produces = "application/json")
