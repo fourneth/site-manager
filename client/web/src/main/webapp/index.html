@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="imsui.css"/>
 </head>
 
-<body>
+<body background="C:\Users\Prathapage\Downloads\21648_10151333962533377_1654311860_n.jpg">
 
 <div id="top-hidden-row"></div>
 <div id="menu-row"></div>
@@ -24,8 +24,51 @@
             <label for="toggle-all">All content goes here</label>
             <ul id="todo-list"></ul>
         </section>
-        <form method="emp_add" action="">
-            <input type="text" name="empId" size="50" maxlength="10" >
+        <form method="POST" action="" enctype="multipart/form-data">
+            <fieldset>
+                <legend align="left">
+            Employee Id:
+            <input type="text" name="empId" value="Enter Employee Id here" size="50" maxlength="10" tabindex="1">  <br>
+            CECB_Id:
+            <input type="text" name="empCecbId" value="Enter Employee CECB Id here" tabindex="2" >  <br>
+            Employee Name:
+            <input type="text" name="empName" value="Enter your Name here" size="50" maxlength="10" tabindex="3" ><br>
+            Employee Address:
+            <textarea type="empAdd" rows="3" cols="1" wrap="hard" tabindex="4"></textarea><br>
+            Email Address:
+            <input type="text" name="empEmailAddress" value="Enter your email address here" tabindex="5" > <br>
+            Employee NIC:
+            <input type="text" name="empNIC" value="Enter your email address here" size="50" maxlength="10" tabindex="6" > <br>
+            Employee Phone No:
+            <input type="text" name="empPhNo" value="Enter your Phone No here" size="50" maxlength="10" tabindex="7"> <br>
+            Gender:<br>Mail
+            <input type="checkbox" name="empGender" value="yes" tabindex="8" >
+            Female
+            <input type="checkbox" name="empGender" value="yes" tabindex="9" > <br>
+            Emp Role:
+            <select name="empRole" size="1" tabindex="10" >
+                <option value="GM" > GM
+                <option value="DGM"> DGM
+                <option value="Site Engineer" > Site Engineer
+                <option value="Stock keeper" > Stock keeper
+                <option value="Procurement Officer" > Procurement Officer
+            </select>
+            Employee Designation:
+            <select name="empDesignation" size="1" tabindex="11" >
+                <option value="GM" >GM
+                <option value="DGM" >DGM
+                <option value="Site Engineer">Site Engineer
+                <option value="Stock Keeper">Stock keepre
+                <option value="Procurement office ">Procurement Officer
+            </select><br>
+            <input type="reset" value="Reset" tabindex="12" >
+            <input type="submit" value="Save" tabindex="13" >
+            <input type="submit" value="Update" tabindex="14" >
+            <input type="submit" value="Delete" tabindex="15" >
+            Employee Photo:
+            <input type="file" name="Photo" size="50" >
+                    </legend>
+            </fieldset>
         </form>
 
         <footer>
@@ -41,3 +84,4 @@
 <script type="text/javascript" src="backbone.js"/>
 <script type="text/javascript" src="imsui.js"/>
 </body>
+</html>
