@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="imsui.css"/>
 </head>
 
-<body background="C:\Users\Prathapage\Downloads\21648_10151333962533377_1654311860_n.jpg">
+<!--Here can`t be use frameset functions -->
+
+<body background="C:\Users\Prathapage\Downloads\Compressed\Visual Paradigm for UML 10.1\.install4j\i4j_extf_1_aprh35_2o1i3y.png">
 
 <div id="top-hidden-row"></div>
 <div id="menu-row"></div>
 <div id="content-row">
     <div id="left-menu-column"></div>
     <div id="content-column">
+
         <header>
             <h1>Employee content header</h1>
             <input id="employee-name" type="text" placeholder="employee name goes here?">
@@ -22,8 +25,10 @@
         <section id="main">
             <input id="toggle-all" type="checkbox">
             <label for="toggle-all">All content goes here</label>
-            <ul id="todo-list"></ul>
+            <ul id="todo-list"></ul><br>
         </section>
+        <hr><br>
+
         <form method="POST" action="" enctype="multipart/form-data">
             <fieldset>
                 <legend align="left">
@@ -32,9 +37,9 @@
             CECB_Id:
             <input type="text" name="empCecbId" value="Enter Employee CECB Id here" tabindex="2" >  <br>
             Employee Name:
-            <input type="text" name="empName" value="Enter your Name here" size="50" maxlength="10" tabindex="3" ><br>
+            <input type="text" name="empName" value="Enter your Name here" size="50" maxlength="100" tabindex="3" ><br>
             Employee Address:
-            <textarea type="empAdd" rows="3" cols="1" wrap="hard" tabindex="4"></textarea><br>
+            <textarea type="empAdd" rows="3" cols="50" wrap="hard" tabindex="4"></textarea><br>
             Email Address:
             <input type="text" name="empEmailAddress" value="Enter your email address here" tabindex="5" > <br>
             Employee NIC:
@@ -61,12 +66,13 @@
                 <option value="Stock Keeper">Stock keepre
                 <option value="Procurement office ">Procurement Officer
             </select><br>
+            Employee Photo:
+            <input type="file" name="Photo" size="50" > <br><br>
             <input type="reset" value="Reset" tabindex="12" >
             <input type="submit" value="Save" tabindex="13" >
             <input type="submit" value="Update" tabindex="14" >
             <input type="submit" value="Delete" tabindex="15" >
-            Employee Photo:
-            <input type="file" name="Photo" size="50" >
+
                     </legend>
             </fieldset>
         </form>
@@ -84,4 +90,5 @@
 <script type="text/javascript" src="backbone.js"/>
 <script type="text/javascript" src="imsui.js"/>
 </body>
+
 </html>
