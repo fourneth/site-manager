@@ -1,0 +1,11 @@
+.idea/
+client/.idea/
+client/site-client.iml
+client/web/imsui.iml
+server/.idea/ant.xml
+server/.idea/artifacts/imsui_war.xml
+server/.idea/artifacts/imsui_war_exploded.xml
+server/.idea/libraries/Maven__javassist_javassist_3_4_GA.xml
+server/.idea/libraries/Maven__org_jsoup_jsoup_1_7_2.xml
+top-level-pom (1).iml
+

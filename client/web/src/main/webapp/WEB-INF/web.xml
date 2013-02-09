@@ -37,7 +37,7 @@
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/ui/*</url-pattern>
     </servlet-mapping>
 
     <session-config>
