@@ -21,7 +21,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Repository
-@Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.DEFAULT)
+@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT)
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     @PersistenceContext

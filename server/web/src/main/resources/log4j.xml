@@ -14,7 +14,6 @@
     <!--<appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">-->
     <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
         <param name="file" value="../logs/ims.log"/>
-        <param name="maxNumberOfDays" value="30" />
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss.SSSS}], %-5p, %t %5c - %m%n"/>
         </layout>
