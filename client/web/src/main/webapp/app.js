@@ -1,92 +1,44 @@
-Ext.require([
-    //'Ext.form.*',
-    //'Ext.layout.container.Column',
-    //'Ext.tab.Panel'
-    '*'
-]);
+//neel edited 6.51 2/22/2013
+/*Ext.Loader.setConfig({enabled: true});
+Ext.Loader.setPath('Ext.ux', 'app/ux');
 
-Ext.onReady(function() {
-    Ext.QuickTips.init();
+Ext.syncRequire('Ext.app.EventBus');*/
 
-    var bd = Ext.getBody();
+    Ext.application(
+    {
+        name: 'ExtMVC',
 
-    /*
-     * ================  Simple form  =======================
-     */
-    bd.createChild({tag: 'h2', html: 'Employee Details Forms'});
+        controllers:
+        [
+            'Stocks'
+        ],
 
-    var required = '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
-
-    var simple = Ext.widget({
-        xtype: 'form',
-        layout: 'form',
-        collapsible: true,
-        id: 'employeeForm',
-        url: 'save-employeeform.php',
-        frame: true,
-        title: 'Employee Details',
-        bodyPadding: '5 5 0',
-        width: 600,
-        fieldDefaults: {
-            msgTarget: 'side',
-            labelWidth: 75
-        },
-        defaultType: 'textfield',
-        items: [{
-            fieldLabel: 'First Name',
-            afterLabelTextTpl: required,
-            name: 'first',
-            allowBlank: false
-        },{
-            fieldLabel: 'Last Name',
-            afterLabelTextTpl: required,
-            name: 'last',
-            allowBlank: false
-        },{
-            fieldLabel: 'Company',
-            name: 'company'
-        }, {
-            fieldLabel: 'Email',
-            afterLabelTextTpl: required,
-            name: 'email',
-            allowBlank: false,
-            vtype:'email'
-        }, {
-            fieldLabel: 'DOB',
-            name: 'dob',
-            xtype: 'datefield'
-        }, {
-            fieldLabel: 'Age',
-            name: 'age',
-            xtype: 'numberfield',
-            minValue: 0,
-            maxValue: 100
-        }, {
-            xtype: 'timefield',
-            fieldLabel: 'Time',
-            name: 'time',
-            minValue: '8:00am',
-            maxValue: '6:00pm'
-        },{
-            xtype: 'htmleditor',
-            name: 'bio',
-            fieldLabel: 'Biography',
-            height: 200,
-            anchor: '100%'
-        }],
-
-        buttons: [{
-            text: 'Save',
-            handler: function() {
-                this.up('form').getForm().isValid();
-            }
-        },{
-            text: 'Cancel',
-            handler: function() {
-                this.up('form').getForm().reset();
-            }
-        }]
+        autoCreateViewport: true
     });
+//neel edited 6.51 2/22/2013
+  /*  Ext.override(Ext.app.EventBus,{
+        constructor: function()
+        {
+            this.mixins.observable.constructor.call(this);
 
-    simple.render(document.body);
-	});
+
+            this.bus = {};
+
+
+            var me = this;
+            Ext.override(Ext.Component,
+            {
+                fireEvent: function(ev)
+                {
+
+                    if (Ext.util.Observable.prototype.fireEvent.apply(this, arguments) !== false && !this.eventsSuspended)
+                    {
+
+                        return me.dispatch.call(me, ev, this, arguments);
+                    }
+                    return false;
+                }
+            });
+        }
+    });*/
+
