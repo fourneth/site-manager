@@ -1,70 +1,70 @@
 Ext.define('ExtMVC.controller.Stocks', {
     extend:
-    'Ext.app.Controller',
+        'Ext.app.Controller',
 
     models:
-    ['Stock','RadarDataSet','User'],
+        ['Stock','RadarDataSet','User'],
 
     stores:
-    ['Stocks', 'RadarDataSets','Users'],
+        ['Stocks', 'RadarDataSets','Users'],
 
     views:
-    [
-        'chart.StockRadar',
-        'chart.StockBar',
-        'stocks.StockGrid',
-        'login.Form'
-    ],
+        [
+            'chart.StockRadar',
+            'chart.StockBar',
+            'stocks.StockGrid',
+            'login.Form'
+        ],
 
     //neel edited 7.18 2/22/2013
     /*refs:[
-        {
-            ref: 'stockForm',
-            selector: 'form'
-        },
-        {
-            ref: 'stockGrid',
-            selector: 'grid'
-        }
-    ],*/
+     {
+     ref: 'stockForm',
+     selector: 'form'
+     },
+     {
+     ref: 'stockGrid',
+     selector: 'grid'
+     }
+     ],*/
 
     init: function()
     {
         //load all data into views
         this.loadStore();
 
-       // neel edited 7.22 2/22/2013
+        // neel edited 7.22 2/22/2013
         /*this.control({
-            'stockgrid':
-            {
-                selectionchange: this.selectionchange
-            },
-            'numberfield':
-            {
-                change: this.changeField
-            },
-            'stockbar':
-            {
-                afterrender: function (chart,o)
-                {
+         'stockgrid':
+         {
+         selectionchange: this.selectionchange
+         },
+         'numberfield':
+         {
+         change: this.changeField
+         },
+         'stockbar':
+         {
+         afterrender: function (chart,o)
+         {
 
-                    var series = chart.series.getAt(0);
-                    series.listeners =
-                    {
-                        itemmouseup: function(item)
-                        {
-                            var series = Ext.ComponentQuery.query('stockbar')[0].series.get(0);
-                            var index = Ext.Array.indexOf(series.items, item);
-                            var selectionModel = Ext.ComponentQuery.query('grid')[0].getSelectionModel();
+         var series = chart.series.getAt(0);
+         series.listeners =
+         {
+         itemmouseup: function(item)
+         {
+         var series = Ext.ComponentQuery.query('stockbar')[0].series.get(0);
+         var index = Ext.Array.indexOf(series.items, item);
+         var selectionModel = Ext.ComponentQuery.query('grid')[0].getSelectionModel();
 
-                            var selectedStoreItem = item.storeItem;
-                            selectionModel.select(index);
-                        }
-                    }
-                },
-                beforerefresh: this.beforerefresh
-            }
-        });*/
+         var selectedStoreItem = item.storeItem;
+         selectionModel.select(index);
+         }
+         }
+         },
+         beforerefresh: this.beforerefresh
+         }
+         });*/
     },
 
     loadStore: function()
@@ -166,26 +166,26 @@ Ext.define('ExtMVC.controller.Stocks', {
     updateRecord: function(rec)
     {
         var name, series, i, l, items, json = [
-        {
-            'Name': 'Price',
-            'Data': rec.get('price')
-        },
-        {
-            'Name': 'Revenue %',
-            'Data': rec.get('revenue %')
-        },
-        {
-            'Name': 'Growth %',
-            'Data': rec.get('growth %')
-        },
-        {
-            'Name': 'Product %',
-            'Data': rec.get('product %')
-        },
-        {
-            'Name': 'Market %',
-            'Data': rec.get('market %')
-        }];
+            {
+                'Name': 'Price',
+                'Data': rec.get('price')
+            },
+            {
+                'Name': 'Revenue %',
+                'Data': rec.get('revenue %')
+            },
+            {
+                'Name': 'Growth %',
+                'Data': rec.get('growth %')
+            },
+            {
+                'Name': 'Product %',
+                'Data': rec.get('product %')
+            },
+            {
+                'Name': 'Market %',
+                'Data': rec.get('market %')
+            }];
 
         var store = this.getRadarDataSetsStore();
         store.loadData(json);
