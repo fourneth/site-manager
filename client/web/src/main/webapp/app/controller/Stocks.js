@@ -3,16 +3,17 @@ Ext.define('ExtMVC.controller.Stocks', {
     'Ext.app.Controller',
 
     models:
-    ['Stock','RadarDataSet'],
+    ['Stock','RadarDataSet','User'],
 
     stores:
-    ['Stocks', 'RadarDataSets'],
+    ['Stocks', 'RadarDataSets','Users'],
 
     views:
     [
         'chart.StockRadar',
         'chart.StockBar',
-        'stocks.StockGrid'
+        'stocks.StockGrid',
+        'login.Form'
     ],
 
     //neel edited 7.18 2/22/2013
