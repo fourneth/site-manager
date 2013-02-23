@@ -8,7 +8,7 @@ Ext.define('fourneth.ims.view.Viewport', {
     layout: 'fit',
     
     requires: [
-        'fourneth.ims.view.user.LoginForm'
+        'fourneth.ims.login.LoginForm'
     ],
     
     initComponent: function() {

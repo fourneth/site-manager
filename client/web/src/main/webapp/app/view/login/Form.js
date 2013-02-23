@@ -1,6 +1,6 @@
 Ext.define('ExtMVC.view.login.Form' ,{
     extend: 'Ext.form.FormPanel',
-    alias : 'widget.loginform',
+    alias : 'widget.loginForm',
 
     name: 'loginform',
     frame: true,
