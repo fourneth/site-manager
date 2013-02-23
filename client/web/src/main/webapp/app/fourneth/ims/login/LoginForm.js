@@ -39,11 +39,14 @@ Ext.define('fourneth.ims.login.LoginForm', {
                 fieldLabel: 'Username',
                 name: 'username',
                 id: 'username',
-                inputType: 'text'
+                inputType: 'text',
+                allowBlank: false
             },
             {
                 fieldLabel: 'Password',
-                name: 'password'
+                name: 'password',
+                vtype : 'string',
+                allowBlank: false
             }
         ];
 

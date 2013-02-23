@@ -15,7 +15,10 @@ Ext.define('fourneth.ims.login.LoginController', {
         this.control({'loginForm button[action=login]' : {click : this.onSubmit}})
     },
 
-    onSubmit : function () {
-      alert("called");
+    onSubmit : function (btn) {
+        var form     = btn.up('form').getForm();
+        var username = form.findField('username');
+        var password = form.findField('password');
+
     }
 });
