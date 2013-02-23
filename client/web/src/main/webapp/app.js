@@ -1,19 +1,21 @@
-//neel edited 6.51 2/22/2013
-/*Ext.Loader.setConfig({enabled: true});
-Ext.Loader.setPath('Ext.ux', 'app/ux');
 
-Ext.syncRequire('Ext.app.EventBus');*/
+Ext.Loader.setConfig({enabled: true});
+//Ext.Loader.setPath('FourNeth', 'fourneth');
+
+Ext.syncRequire('Ext.app.EventBus');
 
     Ext.application(
     {
-        name: 'ExtMVC',
-
+        name: 'fourneth.ims',
+        appFolder: 'app/fourneth/ims',
         controllers:
         [
-            'Stocks'
+//            'Stocks'
         ],
 
         autoCreateViewport: true
+
+
     });
 //neel edited 6.51 2/22/2013
   /*  Ext.override(Ext.app.EventBus,{

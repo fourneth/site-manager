@@ -2,20 +2,22 @@
  * The main application viewport, which displays the whole application
  * @extends Ext.Viewport
  */
-Ext.define('ExtMVC.view.Viewport', {
+Ext.define('fourneth.ims.view.Viewport', {
     extend: 'Ext.Viewport',    
     
     layout: 'fit',
     
-    requires: [ ],
-
+    requires: [
+        'fourneth.ims.view.user.LoginForm'
+    ],
+    
     initComponent: function() {
         var me = this;
         
         Ext.apply(me, {
             items: [
                 {
-                    xtype: 'stockform'
+                    xtype: 'loginForm'
                 }
             ]
         });
