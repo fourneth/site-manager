@@ -19,6 +19,13 @@ Ext.define('fourneth.ims.login.LoginController', {
         var form     = btn.up('form').getForm();
         var username = form.findField('username');
         var password = form.findField('password');
-
+        var record = form.getRecord();
+        var values = form.getValues();
+        Ext.Ajax.request({
+            url: '/ims/login',
+            form : 'post_form',
+            method : 'POST',
+            params : {'username' : username.getValue(), 'password' : password.getValue()}
+        });
     }
 });
