@@ -1,6 +1,6 @@
 
 Ext.Loader.setConfig({enabled: true});
-//Ext.Loader.setPath('FourNeth', 'fourneth');
+//Ext.Loader.setPath('fourneth.ims', 'app/fourneth/ims');
 
 Ext.syncRequire('Ext.app.EventBus');
 
@@ -10,7 +10,7 @@ Ext.syncRequire('Ext.app.EventBus');
         appFolder: 'app/fourneth/ims',
         controllers:
         [
-//            'Stocks'
+            'fourneth.ims.login.LoginController'
         ],
 
         autoCreateViewport: true
