@@ -8,7 +8,8 @@ Ext.define('fourneth.ims.view.Viewport', {
     layout: 'fit',
     
     requires: [
-        'fourneth.ims.login.LoginForm'
+        'fourneth.ims.login.LoginForm',
+        'fourneth.ims.procurement.ProcForm'
     ],
     
     initComponent: function() {
@@ -17,7 +18,8 @@ Ext.define('fourneth.ims.view.Viewport', {
         Ext.apply(me, {
             items: [
                 {
-                    xtype: 'loginForm'
+                    //xtype: 'loginForm'
+                    xtype: 'procform'
                 }
             ]
         });

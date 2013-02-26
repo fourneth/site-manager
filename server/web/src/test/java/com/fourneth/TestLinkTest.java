@@ -18,7 +18,7 @@ import java.io.IOException;
  */
 public class TestLinkTest {
 
-    @Test
+    @Test (enabled = false)
     public void testLinks() throws IOException {
         String url = "http://www.ou.ac.lk";
         print("Fetching %s...", url);
