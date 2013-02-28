@@ -7,19 +7,26 @@ Ext.define('fourneth.ims.view.Viewport', {
     
     layout: 'fit',
     
-    requires: [
-        'fourneth.ims.login.LoginForm',
-        'fourneth.ims.procurement.ProcForm'
+    requires:
+    [
+        //'fourneth.ims.login.LoginForm',
+//        'fourneth.ims.procurement.ProcForm'
+        'fourneth.ims.procLayout.procForm',
+//        'fourneth.ims.procurementNew.NewController'
     ],
     
     initComponent: function() {
         var me = this;
         
         Ext.apply(me, {
-            items: [
+            items:
+            [
                 {
-                    //xtype: 'loginForm'
-                    xtype: 'procform'
+                    //xtype: 'loginForm',
+//                    xtype: 'procform'
+                    xtype: 'procForm'
+//                    xtype: 'newProc'
+
                 }
             ]
         });

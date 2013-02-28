@@ -10,8 +10,10 @@ Ext.syncRequire('Ext.app.EventBus');
         appFolder: 'app/fourneth/ims',
         controllers:
         [
-            'fourneth.ims.login.LoginController',
-            'fourneth.ims.procurement.ProcController'
+            //'fourneth.ims.login.LoginController'
+//            'fourneth.ims.procurement.ProcController'
+            'fourneth.ims.procLayout.procController'
+//            'fourneth.ims.procurementNew.NewController'
         ],
 
         autoCreateViewport: true

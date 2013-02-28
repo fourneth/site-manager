@@ -9,5 +9,5 @@ Ext.define('fourneth.ims.procurement.ProcController', {
         ['fourneth.ims.procurement.ProcForm'],
 
     refs :
-        [ { ref: 'procform', selector: 'procform' } ]
+        [ { ref: 'procForm', selector: 'procForm' } ]
 });
