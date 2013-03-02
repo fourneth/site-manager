@@ -21,15 +21,16 @@ Ext.define('FV.view.feed.Add', {
 
     initComponent: function() {
         Ext.apply(this, {
-            buttons: [{
+            buttons: [
+            {
                 text: 'Add feed',
                 action: 'create'
-            }, {
+            },
+            {
                 text: 'Cancel',
                 scope: this,
                 handler: this.close
             }],
-
             items: [{
                 xtype: 'form',
                 bodyStyle: 'padding: 10px;',
