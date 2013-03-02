@@ -367,7 +367,6 @@ Ext.onReady(function() {
         defaults: {
             anchor: '100%'
         },
-
         items: [{
             xtype: 'container',
             layout:'hbox',
@@ -408,7 +407,8 @@ Ext.onReady(function() {
                     anchor:'95%'
                 }]
             }]
-        },{
+        },
+            {
             xtype:'tabpanel',
             plain:true,
             activeTab: 0,

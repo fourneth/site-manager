@@ -7,6 +7,7 @@ Ext.define('fourneth.ims.procLayout.procForm',
     fram:true,
     title:'CECB Project',
     layout: 'border',
+    autoScroll: true,
 
     initComponent:function(){
 
@@ -40,7 +41,7 @@ Ext.define('fourneth.ims.procLayout.procForm',
                 {
                     xtype: 'tabpanel',
                     region: 'east',
-                    title: 'East Side',
+                    title: 'Procurement Notifications',
                     dockedItems: [
                         {
                             dock: 'top',
@@ -66,8 +67,46 @@ Ext.define('fourneth.ims.procLayout.procForm',
                     items: [
                         {
                             html: '<p>A TabPanel component can be a region.</p>',
-                            title: 'A Tab',
-                            autoScroll: true
+                            title: 'Approved',
+                            autoScroll: true,
+                            closable:true
+                        },{
+                                html: '<p>A TabPanel component can be a region.</p>',
+                                title: 'Rejected',
+                                autoScroll: true,
+                                closable:true
+                        },{
+                                html: '<p>A TabPanel component can be a region.</p>',
+                                title: 'Pending',
+                                autoScroll: true,
+                                closable:true,
+                                split: true,
+                                width: 200,
+                                minWidth: 175,
+                                maxWidth: 400,
+                                collapsible: true,
+                                animCollapse: true,
+                                margins: '0 0 0 5',
+                                layout: 'accordion',
+                                items: [
+                                    {
+                                        contentEl: 'west',
+                                        title: 'Up to 3 Week',
+                                        //iconCls: 'nav',
+                                        html:"neel0"
+                                    },
+                                    {
+                                        title: 'Up to 4 Week ',
+                                        html: '<p>neel1.</p>'
+                                        //iconCls: 'settings'
+                                    },
+                                    {
+                                        title: 'after 4 Week',
+                                        html: '<p>neel2.</p>'
+                                        //iconCls: 'info'
+                                    }
+                                ]
+
                         },
                         Ext.create('Ext.grid.PropertyGrid',
                             {
@@ -152,7 +191,7 @@ Ext.define('fourneth.ims.procLayout.procForm',
                                  }
                              }),
                             {
-                                xtype:'form',
+                                xtype:'container',
                                 layout:'form',
                                 collapsible:true,
                                 id:'procform',
@@ -162,6 +201,7 @@ Ext.define('fourneth.ims.procLayout.procForm',
                                 bodyPadding: '5px 5px 0',
                                 width: 600,
                                 height: 150,
+                                closable: true,
                                 fieldDefaults:
                                 {
                                     labelAlign: 'top',
@@ -171,7 +211,10 @@ Ext.define('fourneth.ims.procLayout.procForm',
                                 {
                                     anchor: '100%'
                                 },
-                                    xtype:'tabpanel',
+                                items:[
+
+                                ],
+                                xtype:'tabpanel',
                                     plain:true,
                                     activeTab: 0,
                                     height:235,
@@ -181,7 +224,9 @@ Ext.define('fourneth.ims.procLayout.procForm',
                                     },
                                     items:
                                         [{
-                                            title:'Personal Details',
+                                            title:'BPC Approvalc form',
+                                            closable: true,
+                                            autoScroll:true,
                                                 defaults:{
                                                     width: 230
                                                 },
@@ -363,46 +408,148 @@ Ext.define('fourneth.ims.procLayout.procForm',
                                                     }]
                                                 }]
                                             },
-                                            {
-                                                title:'Phone Numbers',
-                                                defaults:
-                                                {
-                                                    width: 230
+                                            Ext.widget({
+                                                title: 'Request of Quotation Calling',
+                                                xtype: 'form',
+                                                id: 'innerTabsForm',
+                                                collapsible: true,
+                                                closable: true,
+                                                autoScroll:true,
+                                                bodyPadding: 5,
+                                                width: 600,
+                                                fieldDefaults: {
+                                                    labelAlign: 'top',
+                                                    msgTarget: 'side'
                                                 },
-                                                defaultType: 'textfield',
+                                                defaults: {
+                                                    anchor: '100%'
+                                                },
+                                                items: [{
+                                                    xtype: 'container',
+                                                    layout:'hbox',
+                                                    items:[{
+                                                        xtype: 'container',
+                                                        flex: 1,
+                                                        border:false,
+                                                        layout: 'anchor',
+                                                        defaultType: 'textfield',
+                                                        items: [{
+                                                            fieldLabel: 'TO:',
+                                                            xtype: 'combobox',
+                                                            name: 'to',
+                                                            labelWidth: 50,
+                                                            width: 100,
+                                                            store:Ext.create('Ext.data.ArrayStore', {
+                                                                fields: ['abbr'],
+                                                                data :  ['']                                                               }),
+                                                            valueField: 'abbr',
+                                                            displayField: 'abbr',
+                                                            typeAhead: true,
+                                                            queryMode: 'local',
+                                                            allowBlank: false,
+                                                            forceSelection: true,
+                                                            anchor:'95%'
+                                                        },{
+                                                            fieldLabel: 'From:',
+                                                            xtype: 'combobox',
+                                                            name: 'form',
+                                                            labelWidth: 50,
+                                                            width: 100,
+                                                            store:Ext.create('Ext.data.ArrayStore', {
+                                                                fields: ['abbr'],
+                                                                data :  ['neel lal']                                                               }),
+                                                            valueField: 'abbr',
+                                                            displayField: 'abbr',
+                                                            typeAhead: true,
+                                                            queryMode: 'local',
+                                                            allowBlank: false,
+                                                            forceSelection: true,
+                                                            anchor:'95%'
+                                                        },{
+                                                            fieldLabel: 'File No:',
+                                                            allowBlank: false,
+                                                            name: 'fileNo',
+                                                            anchor:'95%'
+                                                        },{
+                                                            fieldLabel: 'Date:',
+                                                            xtype:'datefield',
+                                                            allowBlank: false,
+                                                            name: 'date',
+                                                            anchor:'95%'
+                                                        },{
+                                                            fieldLabel: 'Date of Issues:',
+                                                            xtype:'datefield',
+                                                            allowBlank: false,
+                                                            name: 'date',
+                                                            anchor:'95%'
+                                                        }]
+                                                    }]
+                                                },
+                                                    {
+                                                        xtype:'tabpanel',
+                                                        plain:true,
+                                                        activeTab: 0,
+                                                        height:235,
+                                                        defaults:{
+                                                            bodyPadding: 10
+                                                        },
+                                                        items:[{
+                                                            title:'Personal Details',
+                                                            defaults: {
+                                                                width: 230
+                                                            },
+                                                            defaultType: 'textfield',
 
-                                                items:
-                                                    [
-                                                        {
-                                                            fieldLabel: 'Home',
-                                                            name: 'home'
-                                                            //value: '(888) 555-1212'
-                                                        },
-                                                        {
-                                                            fieldLabel: 'Business',
-                                                            name: 'business'
-                                                        },
-                                                        {
-                                                            fieldLabel: 'Mobile',
-                                                            name: 'mobile'
-                                                        },
-                                                        {
-                                                            fieldLabel: 'Fax',
-                                                            name: 'fax'
-                                                        }
-                                                    ]
-                                            },
-                                            {
-                                                cls: 'x-plain',
-                                                title: 'Biography',
-                                                layout: 'fit',
-                                                items:
-                                                {
-                                                    xtype: 'htmleditor',
-                                                    name: 'bio2'
-                                                    //fieldLabel: 'Biography'
-                                                }
-                                            }
+                                                            items: [{
+                                                                fieldLabel: 'First Name',
+                                                                name: 'first',
+                                                                value: 'Jamie'
+                                                            },{
+                                                                fieldLabel: 'Last Name',
+                                                                name: 'last',
+                                                                value: 'Avins'
+                                                            },{
+                                                                fieldLabel: 'Company',
+                                                                name: 'company',
+                                                                value: 'Ext JS'
+                                                            }, {
+                                                                fieldLabel: 'Email',
+                                                                name: 'email',
+                                                                vtype:'email'
+                                                            }]
+                                                        },{
+                                                            title:'Phone Numbers',
+                                                            defaults: {
+                                                                width: 230
+                                                            },
+                                                            defaultType: 'textfield',
+
+                                                            items: [{
+                                                                fieldLabel: 'Home',
+                                                                name: 'home',
+                                                                value: '(888) 555-1212'
+                                                            },{
+                                                                fieldLabel: 'Business',
+                                                                name: 'business'
+                                                            },{
+                                                                fieldLabel: 'Mobile',
+                                                                name: 'mobile'
+                                                            },{
+                                                                fieldLabel: 'Fax',
+                                                                name: 'fax'
+                                                            }]
+                                                        },{
+                                                            cls: 'x-plain',
+                                                            title: 'Biography',
+                                                            layout: 'fit',
+                                                            items: {
+                                                                xtype: 'htmleditor',
+                                                                name: 'bio2',
+                                                                fieldLabel: 'Biography'
+                                                            }
+                                                        }]
+                                                    }]
+                                            })
                                         ],
                                     buttons:[
                                         {
