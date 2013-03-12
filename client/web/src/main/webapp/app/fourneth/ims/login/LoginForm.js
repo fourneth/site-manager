@@ -1,7 +1,6 @@
 Ext.define('fourneth.ims.login.LoginForm', {
     extend: 'Ext.form.FormPanel',
     alias : 'widget.loginForm',
-
     name: 'loginForm',
     frame: true,
     title: 'Password Verification',

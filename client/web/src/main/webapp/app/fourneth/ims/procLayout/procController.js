@@ -9,5 +9,5 @@ Ext.define('fourneth.ims.procLayout.procController', {
         ['fourneth.ims.procLayout.procForm'],
 
     refs :
-        [ { ref: 'procform1', selector: 'procform1' } ]
+        [ { ref: 'procform1', selector: 'procform1' }]
 });

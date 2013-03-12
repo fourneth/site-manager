@@ -16,8 +16,7 @@ Ext.define('fourneth.ims.procLayout.procForm',
 
         this.items =
             [
-                Ext.create('Ext.Component',
-                {
+                Ext.create('Ext.Component',{
                         region: 'north',
                         height: 32,
                         autoEl:
@@ -39,8 +38,8 @@ Ext.define('fourneth.ims.procLayout.procForm',
                     margins: '0 0 0 0'
                 },
                 {
-                    xtype: 'tabpanel',
                     region: 'east',
+                    xtype: 'tabpanel',
                     title: 'Procurement Notifications',
                     dockedItems: [
                         {
@@ -58,7 +57,7 @@ Ext.define('fourneth.ims.procLayout.procForm',
                     animCollapse: true,
                     collapsible: true,
                     split: true,
-                    width: 225,
+                    width: 300,
                     minSize: 175,
                     maxSize: 400,
                     margins: '0 5 0 0',
@@ -156,138 +155,106 @@ Ext.define('fourneth.ims.procLayout.procForm',
                         }
                     ]
                 },
-                Ext.create('Ext.tab.Panel',
-                    {
+                Ext.create('Ext.tab.Panel',{
                         region: 'center',
-                        deferredRender: false,
-                        activeTab: 0,
                         items: [
                             {
-                                contentEl: 'center1',
-                                title: 'Close Me',
-                                closable: true,
-                                autoScroll: true
-                            },
-                            {
-                                contentEl: 'center2',
-                                title: 'Center Panel',
-                                closable: true,
-                                autoScroll: true
-                            },
-                            Ext.create('Ext.grid.PropertyGrid',
-                            {
-                                 title: 'Property Grid',
-                                 closable: true,
-                                 source:
-                                 {
-                                        "(name)": "Properties Grid",
-                                        "grouping": false,
-                                        "autoFitColumns": true,
-                                        "productionQuality": false,
-                                        "created": Ext.Date.parse('10/15/2006', 'm/d/Y'),
-                                        "tested": false,
-                                        "version": 0.01,
-                                        "borderWidth": 1
-                                 }
-                             }),
-                            {
-                                xtype:'container',
-                                layout:'form',
-                                collapsible:true,
-                                id:'procform',
-                                name: 'procform',
-                                frame: true,
+                                xtype:'tabpanel',
                                 title: 'Procurement Request',
                                 bodyPadding: '5px 5px 0',
-                                width: 600,
-                                height: 150,
                                 closable: true,
-                                fieldDefaults:
-                                {
-                                    labelAlign: 'top',
-                                    msgTarget: 'side'
-                                },
-                                defaults:
-                                {
-                                    anchor: '100%'
-                                },
+                                frame: true,
+                                defaults:{anchor: '100%',bodyPadding: 10},
                                 items:[
-
-                                ],
-                                xtype:'tabpanel',
-                                    plain:true,
-                                    activeTab: 0,
-                                    height:235,
-                                    defaults:
                                     {
-                                        bodyPadding: 10
-                                    },
-                                    items:
-                                        [{
-                                            title:'BPC Approvalc form',
-                                            closable: true,
-                                            autoScroll:true,
-                                                defaults:{
-                                                    width: 230
+                                        title:'BPC Approval form',
+                                        closable: true,
+                                        autoScroll:true,
+                                        defaults:{width: 230},
+                                        items:[
+                                            {
+                                                xtype: 'fieldset',
+                                                collapsible: true,
+                                                collapsed: true,
+                                                title: '<p></p><b> 1 BRIFF DESCRIPTION OF THE JOB </b> </p>',
+                                                layout: 'anchor',
+                                                width:870,
+                                                defaults:
+                                                {
+                                                    xtype: 'textfield',
+                                                    labelWidth: 175,
+                                                    anchor: '100%',
+                                                    labelStyle: 'padding-left:4px;'
                                                 },
-                                                items:[{
-                                                    xtype: 'fieldset',
-                                                    title: '<p></p><b> 1 BRIFF DESCRIPTION OF THE JOB </b> </p>',
-                                                    layout: 'anchor',
-                                                    width:870,
-                                                    defaults: {
-                                                        xtype: 'textfield',
-                                                        labelWidth: 175,
-                                                        anchor: '100%',
-                                                        labelStyle: 'padding-left:4px;'
-                                                    },
-                                                    collapsible: true,
-                                                    collapsed: true,
-                                                    items:[{
+                                                items:[
+                                                    {
                                                         defaultType: 'textfield',
                                                         fieldLabel: '1.1 Job Code',
-                                                        name: 'jobCode'},{
+                                                        name: 'jobCode',
+                                                        anchor:'95%'
+                                                    },
+                                                    {
                                                         defaultType: 'textfield',
                                                         fieldLabel: '1.2 Description of the job',
-                                                        name: 'desriptionOfTheJob'},{
+                                                        name: 'desriptionOfTheJob',
+                                                            anchor:'95%'
+                                                    },
+                                                    {
                                                         defaultType: 'textfield',
                                                         fieldLabel: '1.3 Client',
-                                                        name: 'client'},{
+                                                        name: 'client',
+                                                        anchor:'95%'
+                                                    },
+                                                    {
                                                         defaultType: 'textfield',
                                                         fieldLabel: '1.4 Estimated Project Cost',
-                                                         name: 'estimatedProjectCost'
+                                                         name: 'estimatedProjectCost',
+                                                        anchor:'95%'
                                                     }]
-                                                 },{
-                                                    xtype: 'fieldset',
-                                                    title: '<p></p><b> 2 RELATED DOCUMENTS FOR CALLING QUOTATIONS/BIDS </b> </p>',
-                                                    layout: 'anchor',
-                                                    width:870,
-                                                    defaults: {
-                                                        xtype: 'textfield',
-                                                        labelWidth: 175,
-                                                        anchor: '100%',
-                                                        labelStyle: 'padding-left:4px;'
-                                                    },
-                                                    collapsible: true,
-                                                    collapsed: true,
-                                                    items:[{
+                                            },
+                                            {
+                                                xtype: 'fieldset',
+                                                title: '<p></p><b> 2 RELATED DOCUMENTS FOR CALLING QUOTATIONS/BIDS </b> </p>',
+                                                layout: 'anchor',
+                                                width:870,
+                                                collapsible: true,
+                                                collapsed: true,
+                                                defaults:
+                                                    {
+                                                    xtype: 'textfield',
+                                                    labelWidth: 175,
+                                                    anchor: '100%',
+                                                    labelStyle: 'padding-left:4px;'
+                                                },
+                                                items:[
+                                                    {
                                                         fieldLabel: '2.1 Work Description in respect of this work/supply',
-                                                        name: 'WDRW'},{
+                                                        name: 'WDRW'
+                                                    },
+                                                    {
                                                         fieldLabel: '2.2 Availability of Funds',
-                                                        name: 'availabilityFunds'},{
+                                                        name: 'availabilityFunds'
+                                                    },
+                                                    {
                                                         fieldLabel: '2.3 Requirement form Site SE/RE  ',
-                                                        name: 'requirementFromSiteSe'},{
+                                                        name: 'requirementFromSiteSe'
+                                                    },
+                                                    {
                                                         fieldLabel: '2.4 Engineer`s Estimate',
                                                         name: 'engineerEstimate',
                                                         fieldLabel: '2.5 Bidding document with list of issuance',
-                                                        name: 'BDLI'},{
+                                                        name: 'BDLI'
+                                                    },
+                                                    {
                                                         fieldLabel: '2.6 Document Prepared at the Opening with Sealed Quotations/Bids Received',
-                                                        name: 'DPOSQ'},{
+                                                        name: 'DPOSQ'
+                                                    },
+                                                    {
                                                         fieldLabel: '2.7 Tender Evaluation Report by the TEC',
                                                         name: 'TERT'
                                                     }]
-                                                },{
-                                                    xtype: 'fieldset',
+                                            },{
+                                                xtype: 'fieldset',
                                                     title: '<p></p><b> 3 SUPPORTING DOCUMENTS IF ANY </b> </p>',
                                                     layout: 'anchor',
                                                     width:870,
@@ -407,11 +374,11 @@ Ext.define('fourneth.ims.procLayout.procForm',
                                                         }]
                                                     }]
                                                 }]
-                                            },
-                                            Ext.widget({
+                                    },
+                                    Ext.widget({
                                                 title: 'Request of Quotation Calling',
                                                 xtype: 'form',
-                                                id: 'innerTabsForm',
+                                                id: 'requestQuotationCalling',
                                                 collapsible: true,
                                                 closable: true,
                                                 autoScroll:true,
@@ -424,7 +391,8 @@ Ext.define('fourneth.ims.procLayout.procForm',
                                                 defaults: {
                                                     anchor: '100%'
                                                 },
-                                                items: [{
+                                                items: [
+                                                    {
                                                     xtype: 'container',
                                                     layout:'hbox',
                                                     items:[{
@@ -490,6 +458,7 @@ Ext.define('fourneth.ims.procLayout.procForm',
                                                         plain:true,
                                                         activeTab: 0,
                                                         height:235,
+                                                        anchor:'95%',
                                                         defaults:{
                                                             bodyPadding: 10
                                                         },
@@ -548,25 +517,25 @@ Ext.define('fourneth.ims.procLayout.procForm',
                                                                 fieldLabel: 'Biography'
                                                             }
                                                         }]
-                                                    }]
-                                            })
-                                        ],
-                                    buttons:[
+                                                    }
+
+                                                ]
+                                            })],
+                                buttons:[
+                                    {
+                                        text: 'Save',
+                                        handler: function()
                                         {
-                                            text: 'Save',
-                                            handler: function()
-                                            {
-                                                this.up('form').getForm().isValid();
-                                            }
-                                        },
-                                        {
-                                            text: 'Cancel',
-                                            handler: function()
-                                            {
-                                                this.up('form').getForm().reset();
-                                            }
-                                        }]
-                                }
+                                            this.up('form').getForm().isValid();
+                                        }
+                                    },
+                                    {
+                                        text: 'Cancel',
+                                        handler: function(){
+                                            this.up('form').getForm().reset();
+                                        }
+                                    }]
+                            }
                         ]
                     })
             ];
