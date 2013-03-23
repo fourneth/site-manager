@@ -1,7 +1,5 @@
 //Layout
-Ext.Loader.setConfig({enabled: true});
-//Ext.syncRequire('Ext.app.EventBus');
-/*    Ext.application(
+ /*   Ext.application(
     {
         name: 'fourneth.ims',
         appFolder: 'app/fourneth/ims',
@@ -39,12 +37,19 @@ Ext.Loader.setConfig({enabled: true});
     }
 });*/
 //Grid
-Ext.application({
+/*Ext.application({
     name: 'Ext4Example',
 
     controllers: [
         'Stocks'
     ],
 
+    autoCreateViewport: true
+});*/
+//Layout MVC(Crome)
+Ext.application({
+    name:'CECBLayout',
+    controllers:[
+        'Layouts'],
     autoCreateViewport: true
 });

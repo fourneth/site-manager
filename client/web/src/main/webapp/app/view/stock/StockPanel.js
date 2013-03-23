@@ -10,14 +10,14 @@ Ext.define('Ext4Example.view.stock.StockPanel' ,{
     fieldDefaults: {
         labelAlign: 'left',
         msgTarget: 'side'
-    },
+    }
 
-    items: [{
+    /*items: [{
         xtype: 'stockgrid',
         columnWidth: .70
     },{
         xtype: 'stockform',
         columnWidth: .30
-    }]
+    }]*/
 
 });
