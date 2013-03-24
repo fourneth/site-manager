@@ -1,0 +1,11 @@
+Ext.define('CECBLayout.controller.Layouts',{
+    extend:'Ext.app.Controller',
+    views:[
+        'layout.BaseLayout',
+        'layout.MenuBar',
+        'layout.SouthPanel',
+        'layout.EastPanel',
+        'layout.WestPanel',
+        'layout.CenterPanel'
+    ]
+})
