@@ -1,4 +1,4 @@
-Ext.define('ExtMVC.model.User', {
+Ext.define('CECBLayout.model.User', {
     extend: 'Ext.data.Model',
-    fields: ['username', 'isAdmin', 'authenticated', 'loggedOut']
+    fields: ['username', 'password']
 });

@@ -1,4 +1,4 @@
-Ext.define('ExtMVC.view.login.Form' ,{
+Ext.define('CECBLayout.view.login.Form' ,{
     extend: 'Ext.form.FormPanel',
     alias : 'widget.loginForm',
 

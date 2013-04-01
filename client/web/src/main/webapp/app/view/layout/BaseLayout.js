@@ -4,7 +4,7 @@ Ext.define('CECBLayout.view.layout.BaseLayout',{
 
     id:'baselayout',
     name:'baselayout',
-    fram:true,
+    frame:true,
     title:'CECB_Project',
     layout:'border',
     autoScroll:true,

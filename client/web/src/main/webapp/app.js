@@ -49,7 +49,12 @@
 //Layout MVC(Crome)
 Ext.application({
     name:'CECBLayout',
+    requires : ['CECBLayout.model.LoggedInUser'],
     controllers:[
         'Layouts'],
-    autoCreateViewport: true
+    autoCreateViewport: true,
+
+    init : function(application) {
+        console.log(CECBLayout.model.LoggedInUser.permissions['general.permission']);
+    }
 });
