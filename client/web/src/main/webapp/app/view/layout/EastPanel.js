@@ -5,17 +5,17 @@ Ext.define('CECBLayout.view.layout.EastPanel',{
 //    xtype:'east',
     title: 'Procurement Notifications',
     dockedItems: [
-        {
-            dock: 'bottom',
-            xtype: 'toolbar',
-            items: [ '->',
-                {
-                    xtype: 'button',
-                    text: 'test',
-                    tooltip: 'Test Button'
-                }
-            ]
-        }
+//        {
+//            dock: 'bottom',
+//            xtype: 'toolbar',
+//            items: [ '->',
+//                {
+//                    xtype: 'button',
+//                    text: 'test',
+//                    tooltip: 'Test Button'
+//                }
+//            ]
+//        }
     ],
     animCollapse: true,
     collapsible: true,
