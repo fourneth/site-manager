@@ -32,6 +32,12 @@ Ext.define('CECBLayout.view.layout.MenuBar' ,{
                                 }
 //                            checkHandler: onItemCheck
                             },
+                            {
+                                xtype : 'button',
+                                text: 'Add Procurement',
+                                action: 'add'
+                            }
+                            ,
 
                             '-'
                         ]

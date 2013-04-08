@@ -1,19 +1,10 @@
 Ext.define('CECBLayout.store.Users', {
-    extend: 'Ext.data.ArrayStore',
+    extend: 'Ext.data.Store',
     model: 'CECBLayout.model.User'  ,
-    data : [['123', '123pass'], ['1234', '1234pass']]
-
-//    autoLoad: true,
-//
-//    proxy: {
-//        type: 'ajax',
-//        url: 'login?view=sencha&json=true',
-//        method: 'GET',
-//        reader: {
-//            type: 'json',
-//            root: 'model',
-//            successProperty: 'model.success'
-//        }
-//    }
-
+    autoLoad: true,
+//    data : [['123', '123pass'], ['1234', '1234pass']]
+    proxy: {
+        type: 'localstorage',
+        id:'myProxyKey'
+    }
 });

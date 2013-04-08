@@ -1,8 +1,8 @@
 Ext.define('CECBLayout.view.user.List' ,{
     extend: 'Ext.grid.Panel',
-    requires : ['CECBLayout.store.Users', 'CECBLayout.model.LoggedInUser'],
-    alias: 'widget.userlist',
     store : Ext.create('CECBLayout.store.Users'),
+//    requires : ['CECBLayout.store.Users', 'CECBLayout.model.LoggedInUser'],
+    alias: 'widget.itemList',
     title: 'All Users',
 
     stateful: true,
@@ -10,24 +10,41 @@ Ext.define('CECBLayout.view.user.List' ,{
     multiSelect: true,
     stateId: 'stateGrid',
 
-    columns: [
+    dockedItems: [{
+        xtype: 'pagingtoolbar',
+        store : Ext.create('CECBLayout.store.Users'),
+        dock: 'bottom',
+        displayInfo: true,
+        items: [
+            {
+                xtype: 'tbseparator'
+            },
+            {
+                xtype : 'button',
+                text: 'Add Procurement',
+                action: 'add'
+            }
+        ]
+    }],
+
+    initComponent: function() {
+    this.columns = [
         {
-            text     : 'Username',
-            flex     : 1,
-            sortable : false,
+            header: 'username',
             dataIndex: 'username',
+            flex: 1,
             hidden   : CECBLayout.model.LoggedInUser.permissions['view.user.list.username.view']
 
         },
         {
-            text     : 'User\'s Password',
-            width    : 75,
-            sortable : true,
+            header: 'password',
             dataIndex: 'password',
+            flex: 2,
             hidden   : CECBLayout.model.LoggedInUser.permissions['view.user.list.password.view']
 
         }
-    ]
-
+    ];
+        this.callParent(arguments);
+    }
 
 });
