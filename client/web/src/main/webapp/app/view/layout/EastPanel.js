@@ -31,7 +31,8 @@ Ext.define('CECBLayout.view.layout.EastPanel',{
             html: '<p>A TabPanel component can be a region.</p>',
             title: 'Approved',
             autoScroll: true,
-            closable:true
+            closable:true,
+            items:[{xtype:'itemList'}]
         },{
             html: '<p>A TabPanel component can be a region.</p>',
             title: 'Rejected',

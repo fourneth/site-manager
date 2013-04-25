@@ -21,13 +21,32 @@ Ext.define('CECBLayout.view.layout.WestPanel',{
         },
         {
             title: 'Settings',
-            html: '<p>Some settings in here.</p>',
             iconCls: 'settings'
         },
         {
             title: 'Information',
-            html: '<p>Some info in here.</p>',
+            iconCls: 'info'
+        },
+        {
+            title: 'Site Information',
+            items:[{xtype:'siteList'}],
+            iconCls: 'info'
+        },
+        {
+            title: 'Employee Information',
+            items:[{xtype:'empList'}],
+            iconCls: 'info'
+        },
+        {
+            title: 'Supplier Information',
+            items:[{xtype:'supList'}],
+            iconCls: 'info'
+        },
+        {
+            title: 'Survice Provider Information',
+            items:[{xtype:'serviceProviderList'}],
             iconCls: 'info'
         }
+
     ]
 })

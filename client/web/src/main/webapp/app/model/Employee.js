@@ -1,8 +1,16 @@
-Ext.define('AppName.model.Employee', {
+Ext.define('CECBLayout.model.Employee', {
     extend: 'Ext.data.Model',
     fields: [
-        {name: 'rating', type: 'int'},
-        {name: 'salary', type: 'float'},
-        {name: 'name'}
+        'empId',
+        'cecbId',
+        'empName',
+        'empAddress',
+        'empDesignation',
+        'empRole',
+        'empGender',
+        'empNIC',
+        'empNationality',
+        'empContactNo',
+        'empEmail'
     ]
 });

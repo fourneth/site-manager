@@ -1,4 +1,10 @@
 Ext.define('CECBLayout.model.User', {
     extend: 'Ext.data.Model',
-    fields: ['username', 'password']
+    fields: [
+        'procurmentRequestNo',
+        'datePrepared',
+        'jobNumber',
+        'to',
+        'from'
+    ]
 });

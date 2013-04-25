@@ -34,8 +34,24 @@ Ext.define('CECBLayout.view.layout.MenuBar' ,{
                             },
                             {
                                 xtype : 'button',
-                                text: 'Add Procurement',
-                                action: 'add'
+                                text  : 'Create Procurement',
+                                action: 'procAdd'
+                            },{
+                                xtype : 'button',
+                                text  : 'Create Site',
+                                action: 'siteAdd'
+                            },{
+                                xtype : 'button',
+                                text  : 'Create Employee',
+                                action: 'empAdd'
+                            },{
+                                xtype : 'button',
+                                text  : 'Create Suppliers',
+                                action: 'supAdd'
+                            },{
+                                xtype : 'button',
+                                text  : 'Create Service Provider',
+                                action: 'serviceProviderAdd'
                             }
                             ,
 
