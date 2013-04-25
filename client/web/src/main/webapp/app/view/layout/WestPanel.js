@@ -13,6 +13,7 @@ Ext.define('CECBLayout.view.layout.WestPanel',{
     animCollapse: true,
     margins: '0 0 0 5',
     layout: 'accordion',
+    int:function(){},
     items: [
         {
             contentEl: 'west',
@@ -45,6 +46,11 @@ Ext.define('CECBLayout.view.layout.WestPanel',{
         {
             title: 'Survice Provider Information',
             items:[{xtype:'serviceProviderList'}],
+            iconCls: 'info'
+        },
+        {
+            title: 'Procurement Request',
+            items:[{xtype:'procList'}],
             iconCls: 'info'
         }
 

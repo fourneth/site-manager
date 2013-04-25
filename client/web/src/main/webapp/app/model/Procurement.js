@@ -3,15 +3,19 @@ Ext.define('CECBLayout.model.Procurement', {
     fields: [
         'procurmentRequestNo',
         'datePrepared',
-        'jobNumber',
+        'projectName',
         'to',
         'from',
-        'estimatedProjectCostestimatedProjectCost',
+        'quotationFor',
         'first',
         'requiredItems',
         'approved',
         'requestIncomplete',
         'rejected',
-        'Approved'
+        'fileNo',
+        'amountBeforeVAT',
+        'vatRegNo',
+        'availabilityOfItem',
+        'deliveryPeriod'
     ]
 });

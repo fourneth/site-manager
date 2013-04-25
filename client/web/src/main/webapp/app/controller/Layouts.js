@@ -8,6 +8,7 @@ Ext.define('CECBLayout.controller.Layouts',{
         'layout.WestPanel',
         'layout.CenterPanel',
         'layout.ProcEdit' ,
+        'layout.ProcList',
         'layout.SiteEdit',
         'layout.SiteList',
         'layout.EmpEdit',
@@ -22,6 +23,7 @@ Ext.define('CECBLayout.controller.Layouts',{
     init:function(){
         console.log('controller initialized');
         this.control({
+            //item sample
             'container > panel' : {
                 render : this.onPanelRendered
             },
@@ -78,15 +80,15 @@ Ext.define('CECBLayout.controller.Layouts',{
                 itemdblclick : this.editSurProvider
             },
             //Procurement Request
-/*            'north button[action=procAdd]' : {
+            'north button[action=procAdd]' : {
                 click : this.addProcurement
             },
-            'button[action=serviceProviderSave]' : {
-                click : this.updateSurProvider
+            'procEdit button[action=procSave]' : {
+                click : this.updateProcurement
             },
-            'serviceProviderList' : {
-                itemdblclick : this.editSurProvider
-            }*/
+            'procEdit' : {
+                itemdblclick : this.editProcurement
+            }
         });
     } ,
 
@@ -293,6 +295,43 @@ Ext.define('CECBLayout.controller.Layouts',{
         },
         addSurProvider : function(button) {
             var view = Ext.widget('serviceProviderEdit');
+        },
+    //Procurement request
+        editProcurement : function(grid, record) {
+            var view = Ext.widget('procEdit');
+            view.down('form').loadRecord(record);
+        },
+        updateProcurement : function(button) {
+            var win = button.up('window');
+            var form = win.down('form').getForm();
+            //check of the form has any errors
+            if (form.isValid()) {
+                //get the record
+                var record = form.getRecord();
+                console.log('record is '+record+'')
+                //get the form values
+                var values = form.getValues();
+                console.log('record is '+values+'')
+                //if a new record
+                if(!record){
+                    console.log('start newRecord is');
+                    var newRecord = new CECBLayout.model.Procurement(values);
+                    console.log('newRecord is '+newRecord+' ');
+                    this.getProcurementsStore().add(newRecord);
+//                console.log('this is '+this.getUsersStore().add(newRecord)+' ');
+
+                }
+                //existing record
+                else {
+                    record.set(values);
+                }
+                win.close();
+                //save the data to the Web local Storage
+                this.getProcurementsStore().sync();
+            }
+        },
+        addProcurement : function(button) {
+            var view = Ext.widget('procEdit');
         }
 
     },

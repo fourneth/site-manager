@@ -4,10 +4,12 @@ Ext.define('CECBLayout.view.layout.ProcEdit', {
     title : 'Procurement Add',
     layout: 'fit',
     autoShow: true,
+    autoScroll:true,
     scroll:true,
     collapsible: true,
-    bodyPadding: 5,
-    width: 600,
+//    bodyPadding: 10,
+    width: 900,
+    maxHeight:600,
 
     initComponent: function() {
         this.items = [
@@ -16,10 +18,16 @@ Ext.define('CECBLayout.view.layout.ProcEdit', {
                     labelAlign: 'top',
                     msgTarget: 'side'
                 },
+                autoScroll:true,
                 defaults: {
-                anchor: '100%'           },
+                anchor: '100%' },
                 xtype: 'form',
-                items: [
+                items: [{
+                    xtype:'fieldset',
+                    defaults: {
+                        anchor: '100%' },
+                    margin:10,
+                    items:[
                     {
                         xtype: 'textfield',
                         name : 'procurmentRequestNo',
@@ -27,39 +35,89 @@ Ext.define('CECBLayout.view.layout.ProcEdit', {
                         allowBlank: false
                     },
                     {
+                             xtype:'textfield',
+                             name:'to',
+                             fieldLabel:'TO(Contracting office, Name and Location)',
+                             allowBlank:true
+                         },
+                    {
+                             xtype:'textfield',
+                             name:'from',
+                             fieldLabel:'From(Requisitioning office, Name and Location)',
+                             allowBlank:true
+                         },
+                    {
                         xtype: 'textfield',
                         name : 'datePrepared',
                         fieldLabel: 'DATE PREPARED',
                         allowBlank: false
-                    },{
-                        xtype:'textfield',
-                        name:'jobNumber',
-                        fieldLabel:'JOB/PROJECT NUMBER',
-                        allowBlank:true
-                    },{
-                        xtype:'textfield',
-                        name:'to',
-                        fieldLabel:'TO(Contracting office, Name and Location)',
-                        allowBlank:true
-                    },{
-                        xtype:'textfield',
-                        name:'from',
-                        fieldLabel:'From(Requisitioning office, Name and Location)',
-                        allowBlank:true
-                    },{
-                        xtype:'textfield',
-                        name:'estimatedProjectCost',
-                        fieldLabel:'Estimated Project Cost',
-                        allowBlank:true
-                    },{
+                    },
+                        {xtype:'textfield',
+                        name:'fileNo',
+                        fieldLabel:'File No'}
+            ]},{
+                    xtype:'fieldset',
+                    margin:10,
+                    defaults: {
+                        anchor: '100%' },
+                    items:[
+                        {
+                            xtype:'textfield',
+                            name:'projectName',
+                            fieldLabel:'Project Name',
+                            allowBlank:true
+                        },
+                        {
+                            xtype:'textfield',
+                            name:'quotationFor',
+                            fieldLabel:'Quotation for',
+                            allowBlank:true
+                        }]
+                },
+                    {
                         xtype:'tabpanel',
                         plain:true,
                         activeTab: 0,
                         height:235,
+                        margin:10,
                         defaults:{
                             bodyPadding: 10
                         },
                         items:[
+                            {
+                                cls: 'x-plain',
+                                title: 'Required Items',
+                                autoScroll:true,
+                                layout: {
+                                    type: 'vbox',
+                                    align: 'left'
+                                },
+
+                                items:[ {
+                                    xtype: 'htmleditor',
+                                    name: 'requiredItems'
+                                },{
+                                    xtype:'textfield',
+                                    name:'amountBeforeVAT',
+                                    fieldLabel:'Amount Before VAT',
+                                    labelAlign:'left'
+                                },{
+                                    xtype:'textfield',
+                                    name:'vatRegNo',
+                                    fieldLabel:'Vat Reg No',
+                                    labelAlign:'left'
+                                },{
+                                    xtype:'textfield',
+                                    name:'availabilityOfItem',
+                                    fieldLabel:'Availability Of Item',
+                                    labelAlign:'left'
+                                },{
+                                    xtype:'textfield',
+                                    name:'deliveryPeriod',
+                                    fieldLabel:'Delivery Period',
+                                    labelAlign:'left'
+                                }]
+                            },
                             {
                                 title:'Project/Site Details',
                                 defaults: {
@@ -70,16 +128,10 @@ Ext.define('CECBLayout.view.layout.ProcEdit', {
                                 items: [{
                                     fieldLabel: 'First Name',
                                     name: 'first'
+
                                 }]
-                            },{
-                                cls: 'x-plain',
-                                title: 'Required Items',
-                                layout: 'fit',
-                                items: {
-                                    xtype: 'htmleditor',
-                                    name: 'requiredItems'
-                                }
-                            },{
+                            },
+                            {
                                 title:'Recommendation',
                                 items:[
                                     {
@@ -97,11 +149,18 @@ Ext.define('CECBLayout.view.layout.ProcEdit', {
                                         fieldLabel:'Rejected',
                                         name:'rejected',
                                         labelAlign:'left'
-                                    },{
-                                        xtype:'checkbox',
-                                        fieldLabel:'Approved',
-                                        labelAlign:'left'
-                                    }]
+                                    }
+                                ]
+                            },
+                            {
+                                title:'Suppliers',
+                                items:[{
+                                    xtype:'textfield',
+                                    fieldLabel:'Name & Address '
+                                },{
+                                    xtype:'textfield',
+                                    fieldLabel:'Contact No.(if available)'
+                                }]
                             }
                         ]
                     }
