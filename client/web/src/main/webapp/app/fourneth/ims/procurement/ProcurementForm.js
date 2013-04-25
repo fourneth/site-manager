@@ -1,6 +1,6 @@
 Ext.define('fourneth.ims.procurement.ProcForm',{
     extend:'Ext.form.FormPanel',
-    alias: 'widget.procform',
+    alias: 'widget.procForm',
 
     xtype:'form',
     layout:'form',
