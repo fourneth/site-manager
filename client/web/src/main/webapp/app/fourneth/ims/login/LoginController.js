@@ -1,9 +1,9 @@
 Ext.define('fourneth.ims.login.LoginController', {
-    extend :
-        'Ext.app.Controller',
+    extend : 'Ext.app.Controller',
+    requires : ['fourneth.ims.service.ApiClient'],
 
     models :
-        ['fourneth.ims.login.LoginDetail'],
+        ['fourneth.ims.login.LoginDetails'],
 
     views :
         ['fourneth.ims.login.LoginForm'],
@@ -12,7 +12,9 @@ Ext.define('fourneth.ims.login.LoginController', {
         [ { ref: 'loginForm', selector: 'loginForm' } ],
 
     init : function () {
-        this.control({'loginForm button[action=login]' : {click : this.onSubmit}})
+        this.control(
+            {'loginForm button[action=login]' : {click : this.onSubmit}}
+        );
     },
 
     onSubmit : function (btn) {
@@ -21,11 +23,28 @@ Ext.define('fourneth.ims.login.LoginController', {
         var password = form.findField('password');
         var record = form.getRecord();
         var values = form.getValues();
-        Ext.Ajax.request({
-            url: '/ims/login',
-            form : 'post_form',
-            method : 'POST',
-            params : {'username' : username.getValue(), 'password' : password.getValue()}
-        });
+        var loginResponse = fourneth.ims.service.ApiClient.loginRequest({'username' : username.getValue(), 'password' : password.getValue()});
+        if (loginResponse.success) {
+            fourneth.ims.service.Common.storeLoginDetails({empty : "true"});
+            //direct this guy to home page
+            fourneth.ims.service.Common.goToHomePage(this);
+
+        } else {
+            Ext.Msg.show({
+                title:'Save Changes?',
+                msg: 'You are closing a tab that has unsaved changes. Would you like to save your changes?',
+                buttons: Ext.Msg.YESNOCANCEL,
+                icon: Ext.Msg.QUESTION,
+                callback : function(itemId) {
+                    console.log('this is the callback');
+                    console.log(itemId);
+                }
+            });
+
+        }
+    },
+
+    onClose : function (btn) {
+        //todo close the browser
     }
 });

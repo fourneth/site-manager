@@ -1,12 +1,12 @@
-Ext.define('fourneth.ims.procurement.ProcForm',{
+Ext.define('fourneth.ims.procurement.ProcurementForm',{
     extend:'Ext.form.FormPanel',
-    alias: 'widget.procForm',
+    alias: 'widget.procurementForm',
 
     xtype:'form',
     layout:'form',
     collapsible:true,
-    id:'procform',
-    name: 'procform',
+    id:'procurementForm',
+    name: 'procurementForm',
     frame: true,
 
     title: 'Procurement Request',

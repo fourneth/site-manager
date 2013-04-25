@@ -23,7 +23,8 @@ public class LoginController {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-    @RequestMapping(method = RequestMethod.POST , value ="/login")
+    @RequestMapping(method = RequestMethod.POST , value ="/login", consumes = "application/json",
+            produces = "application/json")
     public @ResponseBody Employee login(String username, String password )
     {
         logger.info("Login Request received username[{}] password[{}]", username, password);

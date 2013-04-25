@@ -26,9 +26,9 @@ Ext.define('fourneth.ims.login.LoginForm', {
                 action: 'login'
             },
             {
-                name: 'logoutButton',
-                text: 'Logout',
-                action: 'logout',
+                name: 'closeButton',
+                text: 'Close',
+                action: 'close',
                 visible: false
             }
         ];

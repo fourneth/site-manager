@@ -1,7 +1,17 @@
-/**
- * Created with IntelliJ IDEA.
- * User: romith
- * Date: 4/25/13
- * Time: 1:08 PM
- * To change this template use File | Settings | File Templates.
- */
+Ext.define('fourneth.ims.service.Common', {
+
+    statics : {
+        alreadyLoggedIn : function() {
+            var item = window.localStorage.getItem('ims.loggedInUser');
+            return item != null;
+        },
+
+        storeLoginDetails : function (employee) {
+            window.localStorage.setItem('ims.loggedInUser', employee);
+        },
+
+        goToHomePage : function (controller) {
+            window.location = window.location + "index.html";
+        }
+    }
+});

@@ -8,6 +8,7 @@ Ext.define('CECBLayout.view.login.Form' ,{
     bodyPadding: '5px 5px 0',
     width: 350,
     height: 150,
+    renderTo : 'whole-page',
     fieldDefaults: {
         labelWidth: 125,
         msgTarget: 'side',

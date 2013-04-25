@@ -3,27 +3,27 @@
  * @extends Ext.Viewport
  */
 //Grid
-/*Ext.define('Ext4Example.view.Viewport', {
-    extend: 'Ext.Viewport',
-    layout: 'fit',
+ Ext.define('CECBLayout.view.Viewport',{
+ extend:'Ext.Viewport',
+ layout:'absolute',
 
-    requires: [
-        'Ext4Example.view.stock.StockGrid',
-        'Ext4Example.view.stock.StockForm'
-    ],
+ requires:[
+ 'CECBLayout.view.layout.BaseLayout',
+ 'CECBLayout.view.login.Form'],
+ initComponent: function(){
+ var me = this;
 
-    initComponent: function() {
-        var me = this;
-
-        Ext.apply(me, {
-            items: [{
-                    xtype: 'stockpanel'
-                }]});
-
-        me.callParent(arguments);
-    }
-});*/
+ Ext.apply(me, {
+ items:[{
+ //                xtype:'baselayout'
+ xtype:'loginForm'
+ }]
+ });
+ me.callParent(arguments);
+ }
+ });
 //Layout MVC
+/*
 Ext.define('CECBLayout.view.Viewport',{
     extend:'Ext.Viewport',
     layout:'fit',
@@ -40,3 +40,4 @@ Ext.define('CECBLayout.view.Viewport',{
         me.callParent(arguments);
     }
 });
+*/

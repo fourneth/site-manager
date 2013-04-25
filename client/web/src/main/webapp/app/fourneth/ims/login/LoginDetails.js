@@ -1,4 +1,4 @@
-Ext.define('LoginDetails', {
+Ext.define('fourneth.ims.login.LoginDetails', {
     extend :
         'Ext.data.Model',
 
@@ -18,7 +18,8 @@ Ext.define('LoginDetails', {
             var given = this.statics().permissions[expectedRole];
             return given == null;
         }
-    }
+
+    },
 
     fields :
         [{name: 'username'}, {name : 'password'}]
