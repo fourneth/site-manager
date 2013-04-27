@@ -6,11 +6,14 @@ Ext.application(
         controllers:
             [
                 'fourneth.ims.login.LoginController'
+//                'fourneth.ims.employee.EmployeeController'
                 //                'fourneth.ims.procurement.ProcController'
                 //            'fourneth.ims.procurementNew.NewController'
             ],
 
-        requires : ['fourneth.ims.login.LoginDetails'],
+        requires : ['fourneth.ims.login.LoginDetails',
+            'fourneth.ims.employee.EmployeeModel'
+        ],
 
         autoCreateViewport: true,
 
@@ -65,4 +68,4 @@ Ext.application(
  console.log(CECBLayout.model.LoggedInUser.permissions['general.permission']);
  }
  });
- */
+*/

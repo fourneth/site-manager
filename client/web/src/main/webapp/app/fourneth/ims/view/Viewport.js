@@ -2,12 +2,10 @@ Ext.define('fourneth.ims.view.Viewport', {
     extend: 'Ext.Viewport',
     layout: 'absolute',
     requires:
-        [
+    [
             'fourneth.ims.login.LoginForm',
             'fourneth.ims.service.Common',
-            'fourneth.ims.procurement.ProcurementForm'
-//        'fourneth.ims.procLayout.procForm'
-//        'fourneth.ims.procurementNew.NewController'
+            'fourneth.ims.view.layout.BaseLayout'
     ],
     initComponent: function() {
         var me = this;
@@ -16,8 +14,8 @@ Ext.define('fourneth.ims.view.Viewport', {
             Ext.apply(me, {
                 items:
                     [ {
-                        xtype: 'procurementForm'
-                    } ]
+                        xtype: 'baselayout'
+                    }]
             });
 
         } else {
