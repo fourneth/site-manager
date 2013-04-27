@@ -11,7 +11,7 @@ Ext.define('fourneth.ims.service.Common', {
         },
 
         goToHomePage : function (controller) {
-            window.location = window.location + "index.html";
+            window.location = window.location;
         }
     }
 });

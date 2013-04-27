@@ -1,21 +1,22 @@
-Ext.define('fourneth.ims.view.layout.CenterPanel',{
-    extend:'Ext.tab.Panel',
-    alias:'widget.center',
-//    requires : ['fourneth.ims..view.login.Form', 'fourneth.ims.view.user.List',
-//    'fourneth.ims.view.layout.ProcEdit'],
-    margins: '0 0 0 5',
-    title:'PRForm',
-    bodyPadding:10,
+var _center_panel;
 
-    items: [
+Ext.define('fourneth.ims.view.layout.CenterPanel', {
+        extend: 'Ext.tab.Panel',
+        alias: 'widget.center',
+        requires : ['fourneth.ims.login.LoginDetails'],
+        margins: '0 0 0 5',
+        title: 'PRForm',
+        bodyPadding: 10,
+
+        items: [
 //        {xtype : 'serviceProviderList'},
 //        {xtype:'serviceProviderEdit'}
-    ] ,
-        init:function(){
-
+        ],
+        initComponent : function () {
+            console.log('center panel init function');
+//            fourneth.ims.login.LoginDetails.views['centerPanel'] = this;
+            _center_panel = this;
+            this.callParent(arguments);
         }
-},
-    function(){
-        console.log("Center Panel was Rendered");
     }
 );

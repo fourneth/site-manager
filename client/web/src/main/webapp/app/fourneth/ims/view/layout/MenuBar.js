@@ -1,15 +1,15 @@
-Ext.define('fourneth.ims.view.layout.MenuBar' ,{
+Ext.define('fourneth.ims.view.layout.MenuBar', {
     extend: 'Ext.form.FormPanel',
-    requires  : ['Ext.menu.*','fourneth.ims.employee.EmployeeEdit'],
-    alias : 'widget.north',
+    requires: ['Ext.menu.*', 'fourneth.ims.employee.EmployeeEdit', 'fourneth.ims.login.LoginDetails'],
+    alias: 'widget.north',
     margins: '5 5 5 5',
     height: 30,
-    columnWidth:.15,
-    items : [
+    columnWidth: .15,
+    items: [
         Ext.create('Ext.toolbar.Toolbar', {
-            items : [
+            items: [
                 {
-                    text:'Procurement',
+                    text: 'Procurement',
                     menu: Ext.create('Ext.menu.Menu', {
                         id: 'mainMenu',
                         style: {
@@ -18,41 +18,36 @@ Ext.define('fourneth.ims.view.layout.MenuBar' ,{
                         items: [
                             {
                                 text: 'Create',
-                                handler : function ()
-                                {
-                                    console.log('create button clicked')
+                                handler: function () {
+                                    console.log('create button clicked');
                                 }
                             },
                             {
-                                xtype : 'button',
-                                text  : 'Create Procurement',
+                                text: 'Create Procurement',
                                 action: 'procAdd',
-                                handler:function(){
-                                    console.log('Procurement Create')
+                                handler: function () {
+                                    var view = Ext.getCmp('procList');
+                                    _center_panel.add(view);
                                 }
                             },
                             {
-                                xtype : 'button',
-                                text  : 'Create Site',
+                                text: 'Create Site',
                                 action: 'siteAdd'
                             },
                             {
-                                xtype : 'button',
-                                text  : 'Create Employee',
+                                text: 'Create Employee',
                                 action: 'empAdd',
-                                handler:function(){
-                                    console.log('Employee create'),
+                                handler: function () {
+                                    console.log('Employee create');
                                     Ext.widget('empEdit').renderLink('fourneth/ims/view/layout/CenterPanel')
                                 }
                             },
                             {
-                                xtype : 'button',
-                                text  : 'Create Suppliers',
+                                text: 'Create Suppliers',
                                 action: 'supAdd'
                             },
                             {
-                                xtype : 'button',
-                                text  : 'Create Service Provider',
+                                text: 'Create Service Provider',
                                 action: 'serviceProviderAdd'
                             }
                             ,
@@ -64,7 +59,4 @@ Ext.define('fourneth.ims.view.layout.MenuBar' ,{
             ]
         })
     ]
-},
-    function(){
-    console.log('Menu Bar was renderd');}
-);
+});

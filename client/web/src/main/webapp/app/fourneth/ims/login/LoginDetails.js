@@ -9,6 +9,8 @@ Ext.define('fourneth.ims.login.LoginDetails', {
             'general.permission'           : false
         },
 
+        views : {centerPanel : null},
+
         isAllowed : function(expectedRole) {
             var given = this.statics().permissions[expectedRole];
             return given != null;

@@ -7,6 +7,8 @@ Ext.define('CECBLayout.model.LoggedInUser' ,
                 'general.permission'           : false
             },
 
+            views : {},
+
             isAllowed : function(expectedRole) {
                 var given = this.statics().permissions[expectedRole];
                 return given != null;

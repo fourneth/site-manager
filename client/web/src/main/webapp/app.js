@@ -1,4 +1,5 @@
-//Layout
+var _app;
+
 Ext.application(
     {
         name: 'fourneth.ims',
@@ -18,6 +19,7 @@ Ext.application(
         autoCreateViewport: true,
 
         init : function(application) {
+            _app = this;
             console.log(fourneth.ims.login.LoginDetails.permissions['general.permission']);
         }
     });

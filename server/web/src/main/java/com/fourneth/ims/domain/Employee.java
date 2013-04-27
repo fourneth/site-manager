@@ -6,8 +6,6 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -16,12 +14,8 @@ import javax.xml.bind.annotation.*;
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity(name = "EMPLOYEE")
-public class Employee {
+public class Employee extends EntityClass {
 
-    @Id
-    @Column(name="ID")
-    @GeneratedValue
-    private int id;
     @Column(name="FIRST_NAME")
     private String firstName;
     @Column(name="LAST_NAME")
@@ -42,13 +36,5 @@ public class Employee {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

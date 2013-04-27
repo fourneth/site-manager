@@ -2,6 +2,7 @@ Ext.define('fourneth.ims.procurement.ProcurementList' ,{
     extend: 'Ext.grid.Panel',
     store : Ext.create('fourneth.ims.procurement.ProcurementStore'),
     alias: 'widget.procList',
+    id : 'procList',
 
     stateful: true,
     collapsible: true,
