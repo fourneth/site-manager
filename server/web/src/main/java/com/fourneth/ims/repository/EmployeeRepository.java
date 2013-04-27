@@ -2,9 +2,9 @@ package com.fourneth.ims.repository;
 
 
 import com.fourneth.ims.domain.Employee;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
 public interface EmployeeRepository {
 
     public void save(Employee e);

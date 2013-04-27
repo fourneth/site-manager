@@ -3,21 +3,21 @@
 
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-    <!--appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
         <param name="level" value="trace"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern"
                    value="[%d{yyyy-MM-dd HH:mm:ss.SSSS}], %-5p, %t %c - %m%n"/>
         </layout>
-    </appender-->
+    </appender>
 
     <!--<appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">-->
-    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="file" value="../logs/ims.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss.SSSS}], %-5p, %t %5c - %m%n"/>
-        </layout>
-    </appender>
+    <!--<appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">-->
+        <!--<param name="file" value="../logs/ims.log"/>-->
+        <!--<layout class="org.apache.log4j.PatternLayout">-->
+            <!--<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss.SSSS}], %-5p, %t %5c - %m%n"/>-->
+        <!--</layout>-->
+    <!--</appender>-->
 
     <logger name="org.springframework.security">
         <level value="WARN"/>
@@ -45,8 +45,8 @@
 
     <root>
         <level value="INFO"/>
-        <!--<appender-ref ref="CONSOLE"/>-->
-        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+        <!--<appender-ref ref="FILE"/>-->
     </root>
 
 </log4j:configuration>

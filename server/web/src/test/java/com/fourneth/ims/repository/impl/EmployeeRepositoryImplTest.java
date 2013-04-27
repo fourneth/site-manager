@@ -1,8 +1,10 @@
 package com.fourneth.ims.repository.impl;
 
+import com.fourneth.ims.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -16,10 +18,10 @@ import static org.junit.Assume.assumeNotNull;
  * To change this template use File | Settings | File Templates.
  */
 @ContextConfiguration(locations = "classpath:unit-text-context.xml")
-public class EmployeeRepositoryImplTest extends AbstractTestNGSpringContextTests {
+public class EmployeeRepositoryImplTest extends AbstractTransactionalTestNGSpringContextTests {
 
     @Autowired
-    private EmployeeRepositoryImpl employeeRepository;
+    private EmployeeRepository employeeRepository;
 
     @BeforeMethod
     public void setUp() throws Exception {

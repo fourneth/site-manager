@@ -8,4 +8,7 @@ server/.idea/artifacts/imsui_war_exploded.xml
 server/.idea/libraries/Maven__javassist_javassist_3_4_GA.xml
 server/.idea/libraries/Maven__org_jsoup_jsoup_1_7_2.xml
 top-level-pom (1).iml
+server/web/src/main/resources/rebel.xml
+client/web/src/main/resources/rebel.xml
+client/web/src/main/resources/rebel.xml
 
