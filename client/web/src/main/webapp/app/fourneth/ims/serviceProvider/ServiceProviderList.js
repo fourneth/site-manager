@@ -2,7 +2,7 @@ Ext.define('fourneth.ims.serviceProvider.ServiceProviderList' ,{
     extend: 'Ext.grid.Panel',
     store : Ext.create('fourneth.ims.serviceProvider.ServiceProviderStore'),
     alias: 'widget.serviceProviderList',
-
+    id:'serviceProviderList',
     stateful: true,
     collapsible: true,
     multiSelect: true,

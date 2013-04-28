@@ -1,10 +1,13 @@
 Ext.define('fourneth.ims.suppliers.SupplierEdit', {
-    extend: 'Ext.window.Window',
+    extend: 'Ext.form.Panel',
     alias : 'widget.supEdit',
     title : 'Supplier Master form',
     layout: 'fit',
     autoShow: true,
+    autoScroll:true,
+    scroll:true,
     width:950,
+    closable:true,
 
     initComponent: function() {
         this.items = [

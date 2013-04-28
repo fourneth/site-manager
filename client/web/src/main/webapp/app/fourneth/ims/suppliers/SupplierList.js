@@ -2,7 +2,7 @@ Ext.define('fourneth.ims.suppliers.SupplierList' ,{
     extend: 'Ext.grid.Panel',
     store : Ext.create('fourneth.ims.suppliers.SupplierStore'),
     alias: 'widget.supList',
-
+    id:'supList',
     stateful: true,
     collapsible: true,
     multiSelect: true,

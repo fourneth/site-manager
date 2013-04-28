@@ -2,6 +2,7 @@ Ext.define('fourneth.ims.site.SiteList' ,{
     extend: 'Ext.grid.Panel',
     store : Ext.create('fourneth.ims.site.SiteStore'),
     alias: 'widget.siteList',
+    id:'siteList',
 
     stateful: true,
     collapsible: true,

@@ -1,15 +1,38 @@
 Ext.define('fourneth.ims.procurement.ProcurementEdit', {
-    extend: 'Ext.window.Window',
-    alias : 'widget.procEdit',
+    extend: 'Ext.form.Panel',
+    alias : 'widget.procurementEdit',
+    id:'procurementEdit',
     title : 'Procurement Add',
-    layout: 'fit',
+    layout: 'card',
     autoShow: true,
     autoScroll:true,
     scroll:true,
     collapsible: true,
+    closable:true,
 //    bodyPadding: 10,
     width: 900,
     maxHeight:600,
+
+    bbar:['->',{
+        id:'card-preview',
+        text:'Previous'
+    },{
+        id:'card-next',
+        text:'Next',
+        action:'nextPage'
+
+    }] ,
+
+    items:[{
+        id:'card-0',
+        html:'page1'
+    },{
+        id:'card-1',
+        html:'page2'
+    },{
+        id:'card-3',
+        html:'page3'
+    }] ,
 
     initComponent: function() {
         this.items = [
