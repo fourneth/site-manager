@@ -15,6 +15,7 @@ Ext.define('fourneth.ims.suppliers.SupplierEdit', {
                 xtype: 'form',
                 anchor:100,
                 defaultType:'textfield',
+                autoScroll:true,
                 items: [
                     {
                         name : 'supId',

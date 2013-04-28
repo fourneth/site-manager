@@ -5,13 +5,18 @@ Ext.define('fourneth.ims.serviceProvider.ServiceProviderEdit', {
     title : 'Service Provider Master form',
     layout: 'fit',
     autoShow: true,
+    autoScroll:true,
     width:950,
     closable:true,
+//    collapsible: true,
+//    closable:true,
+
     initComponent: function() {
         this.items = [
             {
                 xtype: 'form',
                 anchor: 100,
+                autoScroll:true,
                 items: [
 
                     {

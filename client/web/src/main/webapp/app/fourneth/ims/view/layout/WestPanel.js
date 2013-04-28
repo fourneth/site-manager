@@ -36,7 +36,10 @@ Ext.define('fourneth.ims.view.layout.WestPanel',{
         },
         {
             title: 'Site Information',
-            items:[{xtype:'siteList'}],
+            items:[{
+                xtype:'siteList',
+                region:'siteList'
+            }],
             iconCls: 'info'
         },
         {

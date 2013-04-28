@@ -4,6 +4,6 @@ Ext.define('fourneth.ims.site.SiteStore', {
     autoLoad: true,
     proxy: {
         type: 'localstorage',
-        id:'myProxyKey'
+        id:'siteAdd'
     }
 });

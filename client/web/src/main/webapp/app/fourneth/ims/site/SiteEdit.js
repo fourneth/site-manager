@@ -9,6 +9,7 @@ Ext.define('fourneth.ims.site.SiteEdit', {
     scroll:true,
     width:950,
     closable:true,
+//    collapsible: true,
 
     initComponent: function() {
         this.items = [
@@ -16,6 +17,7 @@ Ext.define('fourneth.ims.site.SiteEdit', {
                 xtype: 'form',
                 anchor:100,
                 defaultType:'textfield',
+                autoScroll:true,
                 items: [
                     {
                         name : 'projectName',

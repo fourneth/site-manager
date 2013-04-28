@@ -6,14 +6,19 @@ Ext.application(
         appFolder: 'app/fourneth/ims',
         controllers:
             [
-                'fourneth.ims.login.LoginController'
-//                'fourneth.ims.employee.EmployeeController'
-                //                'fourneth.ims.procurement.ProcController'
-                //            'fourneth.ims.procurementNew.NewController'
+                'fourneth.ims.login.LoginController',
+                'fourneth.ims.employee.EmployeeController',
+                'fourneth.ims.suppliers.SupplierController',
+                'fourneth.ims.site.SiteController',
+                'fourneth.ims.serviceProvider.ServiceProviderController',
+                'fourneth.ims.procurement.ProcurementController'
             ],
 
-        requires : ['fourneth.ims.login.LoginDetails',
-            'fourneth.ims.employee.EmployeeModel'
+        requires : [
+            'fourneth.ims.login.LoginDetails',
+            'fourneth.ims.employee.EmployeeModel',
+            'fourneth.ims.employee.EmployeeStore'
+
         ],
 
         autoCreateViewport: true,

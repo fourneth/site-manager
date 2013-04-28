@@ -4,7 +4,10 @@ Ext.define('fourneth.ims.employee.EmployeeEdit', {
     title : 'Employee Master form',
     layout: 'fit',
     autoShow: true,
+    autoScroll:true,
     width:950,
+//    closable:true,
+//    collapsible: true,
     closable:true,
 
     initComponent: function() {
@@ -13,6 +16,7 @@ Ext.define('fourneth.ims.employee.EmployeeEdit', {
                 xtype: 'form',
                 anchor:100,
                 defaultType:'textfield',
+                autoScroll:true,
                 items: [
                     {
                         name : 'empId',

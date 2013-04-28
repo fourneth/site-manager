@@ -1,10 +1,13 @@
 Ext.define('fourneth.ims.suppliers.SupplierStore', {
-    extend: 'Ext.data.Store',
-    model: 'fourneth.ims.suppliers.SupplierModel'  ,
-    autoLoad: true,
-//    data : [['123', '123pass'], ['1234', '1234pass']]
-    proxy: {
-        type: 'localstorage',
-        id:'myProxyKey'
-    }
-});
+        extend: 'Ext.data.Store',
+        model: 'fourneth.ims.suppliers.SupplierModel'  ,
+        autoLoad: true,
+//        storeId:'supplierStore',
+        proxy: {
+            type: 'localstorage',
+            id:'supplierAdd'
+        }
+    },
+    function(){
+        console.log('Supplier Store load');
+    });
