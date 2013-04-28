@@ -3,11 +3,11 @@
 
 	<classpath>
 		<dir name="D:/site-manager/server/web/target/classes"/>
-		<dir name="/home/romith/projects/leaps/source/site-manager/server/web/target/classes"/>
+		<dir name="D:/site-manager/server/web/target/classes"/>
 	</classpath>
 	<web>
 		<link target="/">
-			<dir name="/home/romith/projects/leaps/source/site-manager/server/web/src/main/webapp"/>
+			<dir name="D:/site-manager/server/web/src/main/webapp"/>
 		</link>
 	</web>
 

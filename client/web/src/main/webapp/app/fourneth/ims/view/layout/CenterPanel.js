@@ -7,6 +7,7 @@ Ext.define('fourneth.ims.view.layout.CenterPanel', {
         margins: '0 0 0 5',
         title: 'PRForm',
         bodyPadding: 10,
+        closable:true,
 
         items: [
 //        {xtype : 'serviceProviderList'},

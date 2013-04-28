@@ -1,10 +1,14 @@
 Ext.define('fourneth.ims.site.SiteEdit', {
-    extend: 'Ext.window.Window',
+    extend: 'Ext.form.Panel',
     alias : 'widget.siteEdit',
+    id:'siteEdit',
     title : 'Site Master form',
     layout: 'fit',
     autoShow: true,
+    autoScroll:true,
+    scroll:true,
     width:950,
+    closable:true,
 
     initComponent: function() {
         this.items = [

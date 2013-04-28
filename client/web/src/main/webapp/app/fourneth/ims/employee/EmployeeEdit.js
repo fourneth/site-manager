@@ -1,10 +1,11 @@
 Ext.define('fourneth.ims.employee.EmployeeEdit', {
-    extend: 'Ext.window.Window',
+    extend: 'Ext.form.Panel',
     alias : 'widget.empEdit',
     title : 'Employee Master form',
     layout: 'fit',
     autoShow: true,
     width:950,
+    closable:true,
 
     initComponent: function() {
         this.items = [

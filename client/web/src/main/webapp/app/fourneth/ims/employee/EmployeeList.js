@@ -2,7 +2,7 @@ Ext.define('fourneth.ims.employee.EmployeeList' ,{
     extend: 'Ext.grid.Panel',
     store : Ext.create('fourneth.ims.employee.EmployeeStore'),
     alias: 'widget.empList',
-
+    id:'empList',
     stateful: true,
     collapsible: true,
     multiSelect: true,

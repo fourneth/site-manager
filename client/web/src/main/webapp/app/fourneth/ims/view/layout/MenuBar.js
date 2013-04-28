@@ -1,6 +1,11 @@
 Ext.define('fourneth.ims.view.layout.MenuBar', {
     extend: 'Ext.form.FormPanel',
-    requires: ['Ext.menu.*', 'fourneth.ims.employee.EmployeeEdit', 'fourneth.ims.login.LoginDetails'],
+    requires: [
+        'Ext.menu.*',
+        'fourneth.ims.procurement.ProcurementEdit',
+        'fourneth.ims.login.LoginDetails',
+        'fourneth.ims.site.SiteEdit'
+    ],
     alias: 'widget.north',
     margins: '5 5 5 5',
     height: 30,
@@ -26,29 +31,62 @@ Ext.define('fourneth.ims.view.layout.MenuBar', {
                                 text: 'Create Procurement',
                                 action: 'procAdd',
                                 handler: function () {
-                                    var view = Ext.getCmp('procList');
+
+                                    var view = Ext.getCmp('procurementEdit');
+                                    if(view == null){
+                                        view = Ext.create('fourneth.ims.procurement.ProcurementEdit');
+                                    }
                                     _center_panel.add(view);
+                                    console.log('xxxxx',view);
                                 }
                             },
                             {
                                 text: 'Create Site',
-                                action: 'siteAdd'
+                                action: 'siteAdd',
+                                handler:function(){
+                                    var view = Ext.getCmp('siteEdit');
+                                    if(view == null){
+                                        _center_panel.add(Ext.create('fourneth.ims.site.SiteEdit'));
+                                    }
+//                                    _center_panel.add(view);
+                                    console.log('site view',view);
+
+                                }
                             },
                             {
                                 text: 'Create Employee',
                                 action: 'empAdd',
                                 handler: function () {
-                                    console.log('Employee create');
-                                    Ext.widget('empEdit').renderLink('fourneth/ims/view/layout/CenterPanel')
+                                    var view = Ext.getCmp('empEdit');
+                                    if(view == null){
+                                        view = Ext.create('fourneth.ims.employee.EmployeeEdit');
+                                    }
+                                    _center_panel.add(view);
+                                    console.log('employee view',view);
                                 }
                             },
                             {
                                 text: 'Create Suppliers',
-                                action: 'supAdd'
+                                action: 'supAdd',
+                                handler:function(){
+                                    var view = Ext.getCmp('supEdit');
+                                    if(view == null){
+                                        view = Ext.create('fourneth.ims.suppliers.SupplierEdit');
+                                    }
+                                    _center_panel.add(view);
+                                }
                             },
                             {
                                 text: 'Create Service Provider',
-                                action: 'serviceProviderAdd'
+                                action: 'serviceProviderAdd',
+                                handler:function(){
+
+                                    var view = Ext.getCmp('serviceProviderEdit');
+                                    if(view == null){
+                                        view = Ext.create('fourneth.ims.serviceProvider.ServiceProviderEdit');
+                                    }
+                                    _center_panel.add(view);
+                                }
                             }
                             ,
 
