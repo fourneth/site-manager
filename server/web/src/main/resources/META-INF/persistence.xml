@@ -2,7 +2,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
-   <persistence-unit name="imsDomain">
+   <persistence-unit name="ims_domain">
        <class>com.fourneth.ims.domain.Employee</class>
       <properties>
          <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>

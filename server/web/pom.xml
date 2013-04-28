@@ -17,29 +17,37 @@
 
     <build>
         <finalName>ims</finalName>
-    <plugins>
-        <plugin>
-      <!-- run "mvn hibernate3:hbm2ddl" to generate a schema -->
-      <groupId>org.codehaus.mojo</groupId>
-      <artifactId>hibernate3-maven-plugin</artifactId>
-      <version>2.2</version>
-      <configuration>
-        <components>
-          <component>
-            <name>hbm2ddl</name>
-            <implementation>jpaconfiguration</implementation>
-          </component>
-        </components>
-        <componentProperties>
-          <persistenceunit>imsDomain</persistenceunit>
-          <outputfilename>schema.ddl</outputfilename>
-          <drop>false</drop>
-          <create>true</create>
-          <export>false</export>
-          <format>true</format>
-        </componentProperties>
-      </configuration>
-    </plugin>
+        <plugins>
+            <plugin>
+                <!-- run "mvn hibernate3:hbm2ddl" to generate a schema -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>hibernate3-maven-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>hbm2ddl</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <components>
+                        <component>
+                            <name>hbm2ddl</name>
+                            <implementation>jpaconfiguration</implementation>
+                        </component>
+                    </components>
+                    <componentProperties>
+                        <persistenceunit>ims_domain</persistenceunit>
+                        <outputfilename>schema.ddl</outputfilename>
+                        <drop>true</drop>
+                        <create>true</create>
+                        <export>false</export>
+                        <format>true</format>
+                    </componentProperties>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -86,108 +94,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.mortbay.jetty</groupId>-->
-                <!--<artifactId>jetty-maven-plugin</artifactId>-->
-                <!--<version>${jetty.version}</version>-->
-                <!--<configuration>-->
-                    <!--<jvmArgs>-->
-                        <!---Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005-->
-                    <!--</jvmArgs>-->
-                    <!--<connectors>-->
-                        <!--<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">-->
-                            <!--<port>8080</port>-->
-                            <!--<maxIdleTime>60000</maxIdleTime>-->
-                        <!--</connector>-->
-                    <!--</connectors>-->
-                    <!--<reload>automatic</reload>-->
-                    <!--<scanIntervalSeconds>0</scanIntervalSeconds>-->
-                    <!--<daemon>false</daemon>-->
-                    <!--<webAppConfig>-->
-                        <!--<contextPath>/ims</contextPath>-->
-                    <!--</webAppConfig>-->
-                    <!--<stopPort>9966</stopPort>-->
-                    <!--<stopKey>stop</stopKey>-->
-
-                <!--</configuration>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>start</id>-->
-                        <!--<goals>-->
-                            <!--<goal>run</goal>-->
-                        <!--</goals>-->
-                        <!--<phase>pre-integration-test</phase>-->
-                        <!--<configuration>-->
-                            <!--<skip>${skipTests}</skip>-->
-                            <!--<scanIntervalSeconds>0</scanIntervalSeconds>-->
-                            <!--<daemon>true</daemon>-->
-                            <!--<reload>automatic</reload>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                        <!--<id>run</id>-->
-                        <!--<goals>-->
-                            <!--<goal>run</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<reload>automatic</reload>-->
-                            <!--<scanIntervalSeconds>0</scanIntervalSeconds>-->
-                            <!--<daemon>false</daemon>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--<execution>-->
-                        <!--<id>stop</id>-->
-                        <!--<goals>-->
-                            <!--<goal>stop</goal>-->
-                        <!--</goals>-->
-                        <!--<phase>post-integration-test</phase>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>native2ascii-maven-plugin</artifactId>
-                <version>1.0-alpha-1</version>
-                <configuration>
-                    <dest>target/resources</dest>
-                    <src>src/main/resources</src>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>native2ascii-utf8</id>
-                        <goals>
-                            <goal>native2ascii</goal>
-                        </goals>
-                        <configuration>
-                            <encoding>UTF8</encoding>
-                            <includes>messages_*.properties</includes>
-                            <excludes>ApplicationResources.properties,
-                                ApplicationResources_de*.properties,
-                                ApplicationResources_fr*.properties,
-                                ApplicationResources_nl*.properties,
-                                ApplicationResources_pt*.properties,
-                                ApplicationResources_es*.properties
-                            </excludes>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>native2ascii-8859_1</id>
-                        <goals>
-                            <goal>native2ascii</goal>
-                        </goals>
-                        <configuration>
-                            <encoding>8859_1</encoding>
-                            <includes>ApplicationResources.properties,
-                                ApplicationResources_de.properties,
-                                ApplicationResources_fr.properties,
-                                ApplicationResources_nl.properties,
-                                ApplicationResources_pt*.properties,
-                                ApplicationResources_es*.properties
-                            </includes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -211,11 +117,11 @@
                 <filtering>true</filtering>
             </testResource>
             <testResource>
-                <directory>src/main/webapp</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
+                <directory>src/main/resources/META-INF</directory>
+                <!--<filtering>true</filtering>-->
+                <excludes>
+                    <exclude>**/*.xml</exclude>
+                </excludes>
             </testResource>
         </testResources>
     </build>
@@ -330,6 +236,37 @@
             <scope>test</scope>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator-cdi</artifactId>
+            <version>5.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.3.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0.1</version>
+        </dependency>
+
     </dependencies>
 
 </project>

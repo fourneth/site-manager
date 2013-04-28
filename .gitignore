@@ -11,4 +11,6 @@ top-level-pom (1).iml
 server/web/src/main/resources/rebel.xml
 client/web/src/main/resources/rebel.xml
 client/web/src/main/resources/rebel.xml
+server/server.iml
+server/web/ims.iml
 

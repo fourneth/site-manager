@@ -3,9 +3,9 @@ package com.fourneth.ims.domain;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -13,12 +13,14 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Entity(name = "EMPLOYEE")
+@Entity
+@Table(name = "employee")
 public class Employee extends EntityClass {
 
-    @Column(name="FIRST_NAME")
+    @Column(name="first_name")
+    @NotEmpty
     private String firstName;
-    @Column(name="LAST_NAME")
+    @Column(name="last_name")
     private String lastName;
 
 
