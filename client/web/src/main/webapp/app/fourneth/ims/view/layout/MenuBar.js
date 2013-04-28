@@ -2,7 +2,7 @@ Ext.define('fourneth.ims.view.layout.MenuBar', {
     extend: 'Ext.form.FormPanel',
     requires: ['Ext.menu.*', 'fourneth.ims.employee.EmployeeEdit', 'fourneth.ims.login.LoginDetails'],
     alias: 'widget.north',
-    margins: '5 5 5 5',
+//    margins: '5 5 5 5',
     height: 30,
     columnWidth: .15,
     items: [
