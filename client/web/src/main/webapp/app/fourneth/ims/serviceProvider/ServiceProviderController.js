@@ -27,22 +27,18 @@ Ext.define('fourneth.ims.serviceProvider.ServiceProviderController',{
         view.down('form').loadRecord(record);
     },
     updateSurProvider : function(button) {
-        var win = button.up('window');
-        var form = win.down('form').getForm();
+        var win = button.up('form');
+        var form1 = win.down('form').getForm();
         //check of the form has any errors
-        if (form.isValid()) {
+        if (form1.isValid()) {
             //get the record
-            var record = form.getRecord();
-            console.log('record is '+record+'')
+            var record = form1.getRecord();
             //get the form values
-            var values = form.getValues();
-            console.log('record is '+values+'')
+            var values = form1.getValues();
             //if a new record
             if(!record){
-                console.log('start newRecord is');
-                var newRecord = new CECBLayout.model.ServiceProvider(values);
-                console.log('newRecord is '+newRecord+' ');
-                this.getServiceProvidersStore().add(newRecord);
+                var newRecord = new fourneth.ims.serviceProvider.ServiceProviderModel(values);
+                this.getStore('fourneth.ims.serviceProvider.ServiceProviderStore').add(newRecord);
 //                console.log('this is '+this.getUsersStore().add(newRecord)+' ');
 
             }
@@ -52,7 +48,7 @@ Ext.define('fourneth.ims.serviceProvider.ServiceProviderController',{
             }
             win.close();
             //save the data to the Web local Storage
-            this.getServiceProvidersStore().sync();
+            this.getStore('fourneth.ims.serviceProvider.ServiceProviderStore').sync();
         }
     },
     addSurProvider : function(button) {

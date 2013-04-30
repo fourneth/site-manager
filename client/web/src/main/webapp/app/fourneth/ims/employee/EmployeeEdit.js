@@ -6,8 +6,6 @@ Ext.define('fourneth.ims.employee.EmployeeEdit', {
     autoShow: true,
     autoScroll:true,
     width:950,
-//    closable:true,
-//    collapsible: true,
     closable:true,
 
     initComponent: function() {

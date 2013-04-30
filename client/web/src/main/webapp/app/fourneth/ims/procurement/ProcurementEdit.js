@@ -166,7 +166,7 @@ Ext.define('fourneth.ims.procurement.ProcurementEdit', {
         this.buttons = [
             {
                 text: 'Save',
-                action: 'save'
+                action: 'procSave'
             },
             {
                 text: 'Cancel',

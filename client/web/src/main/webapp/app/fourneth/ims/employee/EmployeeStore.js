@@ -4,6 +4,6 @@ Ext.define('fourneth.ims.employee.EmployeeStore', {
     autoLoad: true,
     proxy: {
         type: 'localstorage',
-        id:'myProxyKey'
+        id:'employeeAdd'
     }
 });

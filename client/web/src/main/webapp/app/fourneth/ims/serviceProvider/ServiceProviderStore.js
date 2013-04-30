@@ -4,6 +4,6 @@ Ext.define('fourneth.ims.serviceProvider.ServiceProviderStore', {
     autoLoad: true,
     proxy: {
         type: 'localstorage',
-        id:'myProxyKey'
+        id:'serviceProvierAdd'
     }
 });

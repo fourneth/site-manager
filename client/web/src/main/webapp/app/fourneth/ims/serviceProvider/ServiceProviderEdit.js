@@ -1,7 +1,6 @@
 Ext.define('fourneth.ims.serviceProvider.ServiceProviderEdit', {
     extend: 'Ext.form.Panel',
     alias : 'widget.serviceProviderEdit',
-//    renderTo:'CECBLayout.view.layout.CenterPanel',
     title : 'Service Provider Master form',
     layout: 'fit',
     autoShow: true,

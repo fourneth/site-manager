@@ -18,6 +18,7 @@ Ext.define('fourneth.ims.site.SiteEdit', {
                 anchor:100,
                 defaultType:'textfield',
                 autoScroll:true,
+                margin:5,
                 items: [
                     {
                         name : 'projectName',
@@ -147,6 +148,7 @@ Ext.define('fourneth.ims.site.SiteEdit', {
                     }
 
                 ]
+
             }
         ];
         this.buttons = [
