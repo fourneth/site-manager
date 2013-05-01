@@ -1,32 +1,34 @@
-Ext.define('fourneth.ims.site.SiteList' ,{
+Ext.define('fourneth.ims.site.SiteList', {
     extend: 'Ext.grid.Panel',
-    store : Ext.create('fourneth.ims.site.SiteStore'),
+    store: Ext.create('fourneth.ims.site.SiteStore'),
     alias: 'widget.siteList',
-    id:'siteList',
+    id: 'siteList',
 
     stateful: true,
     collapsible: true,
     multiSelect: true,
     stateId: 'stateGrid',
 
-    dockedItems: [{
-        xtype: 'pagingtoolbar',
-        store : Ext.create('fourneth.ims.site.SiteStore'),
-        dock: 'bottom',
-        displayInfo: true,
-        items: [
-            {
-                xtype: 'tbseparator'
-            },
-            {
-                xtype : 'button',
-                text: 'Create Site',
-                action: 'siteAdd'
-            }
-        ]
-    }],
+    dockedItems: [
+        {
+            xtype: 'pagingtoolbar',
+            store: Ext.create('fourneth.ims.site.SiteStore'),
+            dock: 'bottom',
+            displayInfo: true,
+            items: [
+                {
+                    xtype: 'tbseparator'
+                },
+                {
+                    xtype: 'button',
+                    text: 'Create Site',
+                    action: 'siteAdd'
+                }
+            ]
+        }
+    ],
 
-    initComponent: function() {
+    initComponent: function () {
         this.columns = [
             {
                 header: 'projectName',

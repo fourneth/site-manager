@@ -1,6 +1,6 @@
 Ext.define('fourneth.ims.login.LoginForm', {
     extend: 'Ext.form.FormPanel',
-    alias : 'widget.loginForm',
+    alias: 'widget.loginForm',
     name: 'loginForm',
     frame: true,
     title: 'Password Verification',
@@ -18,7 +18,7 @@ Ext.define('fourneth.ims.login.LoginForm', {
     },
     defaultType: 'textfield',
 
-    initComponent: function() {
+    initComponent: function () {
         this.buttons = [
             {
                 name: 'loginButton',
@@ -44,7 +44,7 @@ Ext.define('fourneth.ims.login.LoginForm', {
             {
                 fieldLabel: 'Password',
                 name: 'password',
-                vtype : 'string',
+                vtype: 'string',
                 allowBlank: false
             }
         ];

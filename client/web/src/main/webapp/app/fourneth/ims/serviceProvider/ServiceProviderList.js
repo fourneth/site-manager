@@ -1,31 +1,33 @@
-Ext.define('fourneth.ims.serviceProvider.ServiceProviderList' ,{
+Ext.define('fourneth.ims.serviceProvider.ServiceProviderList', {
     extend: 'Ext.grid.Panel',
-    store : Ext.create('fourneth.ims.serviceProvider.ServiceProviderStore'),
+    store: Ext.create('fourneth.ims.serviceProvider.ServiceProviderStore'),
     alias: 'widget.serviceProviderList',
-    id:'serviceProviderList',
+    id: 'serviceProviderList',
     stateful: true,
     collapsible: true,
     multiSelect: true,
     stateId: 'stateGrid',
 
-    dockedItems: [{
-        xtype: 'pagingtoolbar',
-        store : Ext.create('fourneth.ims.serviceProvider.ServiceProviderStore'),
-        dock: 'bottom',
-        displayInfo: true,
-        items: [
-            {
-                xtype: 'tbseparator'
-            },
-            {
-                xtype : 'button',
-                text: 'Create Service Provider',
-                action: 'serviceProviderAdd'
-            }
-        ]
-    }],
+    dockedItems: [
+        {
+            xtype: 'pagingtoolbar',
+            store: Ext.create('fourneth.ims.serviceProvider.ServiceProviderStore'),
+            dock: 'bottom',
+            displayInfo: true,
+            items: [
+                {
+                    xtype: 'tbseparator'
+                },
+                {
+                    xtype: 'button',
+                    text: 'Create Service Provider',
+                    action: 'serviceProviderAdd'
+                }
+            ]
+        }
+    ],
 
-    initComponent: function() {
+    initComponent: function () {
         this.columns = [
             {
                 header: 'serviceCategory',

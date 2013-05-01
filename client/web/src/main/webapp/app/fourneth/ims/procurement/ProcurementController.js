@@ -1,40 +1,40 @@
-Ext.define('fourneth.ims.procurement.ProcurementController',{
-    extend:'Ext.app.Controller',
+Ext.define('fourneth.ims.procurement.ProcurementController', {
+    extend: 'Ext.app.Controller',
 
-    views:[
+    views: [
         'fourneth.ims.procurement.ProcurementEdit',
         'fourneth.ims.procurement.ProcurementList',
         'fourneth.ims.view.layout.MenuBar'
     ],
 
-    stores:[
-        'fourneth.ims.procurement.ServiceProviderStore'
+    stores: [
+        'fourneth.ims.procurement.ProcurementStore'
     ],
 
-    models:[
-        'fourneth.ims.serviceProvider.ServiceProviderModel'
+    models: [
+        'fourneth.ims.procurement.ProcurementModel'
     ],
 
-    init:function(){
+    init: function () {
         this.control({
-            'north button[action=procAdd]' : {
-                click : this.addProcurement
+            'north button[action=procAdd]': {
+                click: this.addProcurement
             },
-            'procurementEdit button[action=procSave]' : {
-                click : this.updateProcurement
+            'procurementEdit button[action=procSave]': {
+                click: this.updateProcurement
             },
-            'serviceProviderList' : {
-                itemdblclick : this.editProcurement
+            'serviceProviderList': {
+                itemdblclick: this.editProcurement
             }
         })
     },
 
-    editProcurement : function(grid, record) {
+    editProcurement: function (grid, record) {
         var view = Ext.widget('procurementEdit');
         view.down('form').loadRecord(record);
     },
-    updateProcuremen : function(button) {
-        console.log('start updateProcurement()')
+
+    updateProcurement: function (button) {
         var win = button.up('form');
         var form1 = win.down('form').getForm();
         //check of the form has any errors
@@ -44,7 +44,7 @@ Ext.define('fourneth.ims.procurement.ProcurementController',{
             //get the form values
             var values = form1.getValues();
             //if a new record
-            if(!record){
+            if (!record) {
                 var newRecord = new fourneth.ims.procurement.ProcurementModel(values);
                 this.getStore('fourneth.ims.procurement.ProcurementStore').add(newRecord);
 //                console.log('this is '+this.getUsersStore().add(newRecord)+' ');
@@ -59,10 +59,9 @@ Ext.define('fourneth.ims.procurement.ProcurementController',{
             this.getStore('fourneth.ims.procurement.ProcurementStore').sync();
         }
     },
-    addProcuremen : function(button) {
-        var view = Ext.widget('procurementEdit');
+
+    addProcurement: function () {
+        Ext.widget('procurementEdit');
     }
 
-
-
-})
+});

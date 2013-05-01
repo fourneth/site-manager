@@ -1,28 +1,29 @@
 Ext.define('fourneth.ims.login.LoginDetails', {
-    extend :
-        'Ext.data.Model',
+    extend: 'Ext.data.Model',
 
-    statics : {
-        permissions : {
-            'view.user.list.username.view' : false,
-            'view.user.list.password.view' : false,
-            'general.permission'           : false
+    statics: {
+        permissions: {
+            'view.user.list.username.view': false,
+            'view.user.list.password.view': false,
+            'general.permission': false
         },
 
-        views : {centerPanel : null},
+        views: {centerPanel: null},
 
-        isAllowed : function(expectedRole) {
+        isAllowed: function (expectedRole) {
             var given = this.statics().permissions[expectedRole];
             return given != null;
         },
 
-        isNotAllowed : function(expectedRole) {
+        isNotAllowed: function (expectedRole) {
             var given = this.statics().permissions[expectedRole];
             return given == null;
         }
 
     },
 
-    fields :
-        [{name: 'username'}, {name : 'password'}]
+    fields: [
+        {name: 'username'},
+        {name: 'password'}
+    ]
 });

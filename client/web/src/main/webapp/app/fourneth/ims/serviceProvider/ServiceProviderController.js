@@ -1,32 +1,32 @@
-Ext.define('fourneth.ims.serviceProvider.ServiceProviderController',{
-    extend:'Ext.app.Controller',
+Ext.define('fourneth.ims.serviceProvider.ServiceProviderController', {
+    extend: 'Ext.app.Controller',
 
-    views:[
+    views: [
         'fourneth.ims.serviceProvider.ServiceProviderEdit',
         'fourneth.ims.serviceProvider.ServiceProviderList',
         'fourneth.ims.view.layout.MenuBar'
     ],
-    stores:['fourneth.ims.serviceProvider.ServiceProviderStore'],
-    models:['fourneth.ims.serviceProvider.ServiceProviderModel'],
+    stores: ['fourneth.ims.serviceProvider.ServiceProviderStore'],
+    models: ['fourneth.ims.serviceProvider.ServiceProviderModel'],
 
-    init:function(){
+    init: function () {
         this.control({
-            'north button[action=serviceProviderAdd]' : {
-                click : this.addSurProvider
+            'north button[action=serviceProviderAdd]': {
+                click: this.addSurProvider
             },
-            'serviceProviderEdit button[action=serviceProviderSave]' : {
-                click : this.updateSurProvider
+            'serviceProviderEdit button[action=serviceProviderSave]': {
+                click: this.updateSurProvider
             },
-            'serviceProviderList' : {
-                itemdblclick : this.editSurProvider
+            'serviceProviderList': {
+                itemdblclick: this.editSurProvider
             }
         })
     },
-    editSurProvider : function(grid, record) {
+    editSurProvider: function (grid, record) {
         var view = Ext.widget('serviceProviderEdit');
         view.down('form').loadRecord(record);
     },
-    updateSurProvider : function(button) {
+    updateSurProvider: function (button) {
         var win = button.up('form');
         var form1 = win.down('form').getForm();
         //check of the form has any errors
@@ -36,7 +36,7 @@ Ext.define('fourneth.ims.serviceProvider.ServiceProviderController',{
             //get the form values
             var values = form1.getValues();
             //if a new record
-            if(!record){
+            if (!record) {
                 var newRecord = new fourneth.ims.serviceProvider.ServiceProviderModel(values);
                 this.getStore('fourneth.ims.serviceProvider.ServiceProviderStore').add(newRecord);
 //                console.log('this is '+this.getUsersStore().add(newRecord)+' ');
@@ -51,7 +51,7 @@ Ext.define('fourneth.ims.serviceProvider.ServiceProviderController',{
             this.getStore('fourneth.ims.serviceProvider.ServiceProviderStore').sync();
         }
     },
-    addSurProvider : function(button) {
-        var view = Ext.widget('serviceProviderEdit');
+    addSurProvider: function () {
+        Ext.widget('serviceProviderEdit');
     }
-})
+});

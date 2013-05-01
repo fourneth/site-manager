@@ -1,32 +1,34 @@
-Ext.define('fourneth.ims.procurement.ProcurementList' ,{
+Ext.define('fourneth.ims.procurement.ProcurementList', {
     extend: 'Ext.grid.Panel',
-    store : Ext.create('fourneth.ims.procurement.ProcurementStore'),
+    store: Ext.create('fourneth.ims.procurement.ProcurementStore'),
     alias: 'widget.procList',
-    id : 'procList',
+    id: 'procList',
 
     stateful: true,
     collapsible: true,
     multiSelect: true,
     stateId: 'stateGrid',
 
-    dockedItems: [{
-        xtype: 'pagingtoolbar',
-        store : Ext.create('fourneth.ims.procurement.ProcurementStore'),
-        dock: 'bottom',
-        displayInfo: true,
-        items: [
-            {
-                xtype: 'tbseparator'
-            },
-            {
-                xtype : 'button',
-                text: 'Create Service Provider',
-                action: 'ProcurementAdd'
-            }
-        ]
-    }],
+    dockedItems: [
+        {
+            xtype: 'pagingtoolbar',
+            store: Ext.create('fourneth.ims.procurement.ProcurementStore'),
+            dock: 'bottom',
+            displayInfo: true,
+            items: [
+                {
+                    xtype: 'tbseparator'
+                },
+                {
+                    xtype: 'button',
+                    text: 'Create Service Provider',
+                    action: 'ProcurementAdd'
+                }
+            ]
+        }
+    ],
 
-    initComponent: function() {
+    initComponent: function () {
         this.columns = [
             {
                 header: 'procurmentRequestNo',

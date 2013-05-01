@@ -1,31 +1,33 @@
-Ext.define('fourneth.ims.suppliers.SupplierList' ,{
+Ext.define('fourneth.ims.suppliers.SupplierList', {
     extend: 'Ext.grid.Panel',
-    store : Ext.create('fourneth.ims.suppliers.SupplierStore'),
+    store: Ext.create('fourneth.ims.suppliers.SupplierStore'),
     alias: 'widget.supList',
-    id:'supList',
+    id: 'supList',
     stateful: true,
     collapsible: true,
     multiSelect: true,
     stateId: 'stateGrid',
 
-    dockedItems: [{
-        xtype: 'pagingtoolbar',
-        store : Ext.create('fourneth.ims.suppliers.SupplierStore'),
-        dock: 'bottom',
-        displayInfo: true,
-        items: [
-            {
-                xtype: 'tbseparator'
-            },
-            {
-                xtype : 'button',
-                text: 'Create Suppliers',
-                action: 'supAdd'
-            }
-        ]
-    }],
+    dockedItems: [
+        {
+            xtype: 'pagingtoolbar',
+            store: Ext.create('fourneth.ims.suppliers.SupplierStore'),
+            dock: 'bottom',
+            displayInfo: true,
+            items: [
+                {
+                    xtype: 'tbseparator'
+                },
+                {
+                    xtype: 'button',
+                    text: 'Create Suppliers',
+                    action: 'supAdd'
+                }
+            ]
+        }
+    ],
 
-    initComponent: function() {
+    initComponent: function () {
         this.columns = [
             {
                 header: 'supId',

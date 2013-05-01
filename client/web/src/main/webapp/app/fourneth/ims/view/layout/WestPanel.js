@@ -1,7 +1,7 @@
-Ext.define('fourneth.ims.view.layout.WestPanel',{
-    extend:'Ext.form.FormPanel',
-    alias:'widget.west',
-    requires :[
+Ext.define('fourneth.ims.view.layout.WestPanel', {
+    extend: 'Ext.form.FormPanel',
+    alias: 'widget.west',
+    requires: [
         'fourneth.ims.site.SiteList',
         'fourneth.ims.employee.EmployeeList',
         'fourneth.ims.suppliers.SupplierList' ,
@@ -19,7 +19,8 @@ Ext.define('fourneth.ims.view.layout.WestPanel',{
     animCollapse: true,
 //    margins: '0 0 0 5',
     layout: 'accordion',
-    init:function(){},
+    init: function () {
+    },
     items: [
         {
             contentEl: 'west',
@@ -36,30 +37,40 @@ Ext.define('fourneth.ims.view.layout.WestPanel',{
         },
         {
             title: 'Site Information',
-            items:[{
-                xtype:'siteList',
-                region:'siteList'
-            }],
+            items: [
+                {
+                    xtype: 'siteList',
+                    region: 'siteList'
+                }
+            ],
             iconCls: 'info'
         },
         {
             title: 'Employee Information',
-            items:[{xtype:'empList'}],
+            items: [
+                {xtype: 'empList'}
+            ],
             iconCls: 'info'
         },
         {
             title: 'Supplier Information',
-            items:[{xtype:'supList'}],
+            items: [
+                {xtype: 'supList'}
+            ],
             iconCls: 'info'
         },
         {
             title: 'Survice Provider Information',
-            items:[{xtype:'serviceProviderList'}],
+            items: [
+                {xtype: 'serviceProviderList'}
+            ],
             iconCls: 'info'
         },
         {
             title: 'Procurement Request',
-            items:[{xtype:'procList'}],
+            items: [
+                {xtype: 'procList'}
+            ],
             iconCls: 'info'
         }
 
