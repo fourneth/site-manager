@@ -66,9 +66,10 @@ Ext.define('fourneth.ims.view.layout.MenuBar', {
                             },
                             {
                                 text: 'View Employees',
-                                action: 'empList',
+                                action: 'employeeList',
                                 handler: function () {
-                                    var view = Ext.getCmp('empEdit');
+                                    var view = Ext.getCmp('employeeList');
+                                    view = view === null ? Ext.getCmp('fourneth.ims.employee.EmployeeList') : view;
                                     if(view == null){
                                         view = Ext.create('fourneth.ims.employee.EmployeeList');
                                     }
