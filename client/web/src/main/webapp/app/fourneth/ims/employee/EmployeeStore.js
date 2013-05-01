@@ -5,9 +5,13 @@ Ext.define('fourneth.ims.employee.EmployeeStore', {
     proxy: {
         type: 'rest',
         url: '/ims/employees',
+        batchActions : true,
         reader: {
             type: 'json',
             root: 'users'
+        },
+        writer: {
+            type: 'json'
         }
     }
 

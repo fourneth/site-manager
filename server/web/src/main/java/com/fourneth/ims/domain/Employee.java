@@ -6,6 +6,8 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -17,10 +19,9 @@ import javax.xml.bind.annotation.*;
 @Table(name = "employee")
 public class Employee extends EntityClass {
 
-    @Column(name="first_name")
-    @NotEmpty
+    @Column(name="first_name") @NotEmpty @Size(max = 50)
     private String firstName;
-    @Column(name="last_name")
+    @Column(name="last_name") @Size(max = 50)
     private String lastName;
 
 

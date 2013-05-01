@@ -2,6 +2,7 @@ package com.fourneth.ims.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
@@ -26,8 +27,7 @@ public class EntityClass implements Serializable {
     private long createdTime;
     @Column(name = "updated_time")
     private long updatedTime;
-    @Column(name = "organization_id")
-    @NotNull
+    @Column(name = "organization_id") @NotNull @Size(max = 50)
     private String organizationId;
 
     public long getId() {

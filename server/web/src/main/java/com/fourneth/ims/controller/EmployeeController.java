@@ -3,13 +3,17 @@ package com.fourneth.ims.controller;
 import com.fourneth.ims.domain.Employee;
 import com.fourneth.ims.repository.EmployeeRepository;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class EmployeeController {
@@ -27,7 +31,7 @@ public class EmployeeController {
         return er.findOne(id);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/employees/",
+    @RequestMapping(method = RequestMethod.POST, value = "/employees/",
             consumes = "application/json", produces = "application/json")
     public @ResponseBody Employee create(@RequestBody Employee e) {
         logger.info("Employee create request received [{}]", e);
@@ -35,9 +39,21 @@ public class EmployeeController {
         return e;
     }
 
+    @RequestMapping(method = RequestMethod.PUT, value = "/employees/",
+            consumes = "application/json", produces = "application/json")
+    public @ResponseBody Employee update(@RequestBody Employee e) {
+        logger.info("Employee create request received [{}]", e);
+        er.save(e);
+        return e;
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "/employees", produces = "application/json")
-    public @ResponseBody List<Employee> findAll() {
+    public @ResponseBody Map findAll() {
         logger.info("Employee get request received.....");
-        return Lists.newArrayList(er.findAll());
+        LinkedHashMap<Object,Object> response = Maps.newLinkedHashMap();
+        response.put("users", Lists.newArrayList(er.findAll()));
+        response.put("success", Boolean.TRUE);
+        response.put("message", "success");
+        return response;
     }
 }
