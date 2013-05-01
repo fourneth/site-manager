@@ -3,6 +3,7 @@ Ext.define('fourneth.ims.employee.EmployeeModel', {
     fields: [
         'id',
         'firstName',
-        'lastName'
+        'lastName',
+        'organizationId'
     ]
 });

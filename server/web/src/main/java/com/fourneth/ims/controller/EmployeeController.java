@@ -31,25 +31,29 @@ public class EmployeeController {
         return er.findOne(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/employees/",
+    @RequestMapping(method = RequestMethod.POST, value = "/employees",
             consumes = "application/json", produces = "application/json")
     public @ResponseBody Employee create(@RequestBody Employee e) {
         logger.info("Employee create request received [{}]", e);
+        e.setCreatedTime(System.currentTimeMillis());
         er.save(e);
         return e;
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/employees/",
+    @RequestMapping(method = RequestMethod.PUT, value = "/employees",
             consumes = "application/json", produces = "application/json")
     public @ResponseBody Employee update(@RequestBody Employee e) {
-        logger.info("Employee create request received [{}]", e);
+        logger.info("Employee update request received [{}]", e);
+        e.setUpdatedTime(System.currentTimeMillis());//todo integrate service layer here
         er.save(e);
         return e;
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/employees", produces = "application/json")
-    public @ResponseBody Map findAll() {
-        logger.info("Employee get request received.....");
+    public @ResponseBody Map findAll(@RequestParam Integer page,
+                                     @RequestParam Integer start,
+                                     @RequestParam Integer limit) {
+        logger.info("Employees get request received.....");
         LinkedHashMap<Object,Object> response = Maps.newLinkedHashMap();
         response.put("users", Lists.newArrayList(er.findAll()));
         response.put("success", Boolean.TRUE);
