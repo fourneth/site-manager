@@ -8,7 +8,7 @@ Ext.define('fourneth.ims.procurement.ProcurementController',{
     ],
 
     stores:[
-        'fourneth.ims.serviceProvider.ServiceProviderStore'
+        'fourneth.ims.procurement.ServiceProviderStore'
     ],
 
     models:[
@@ -34,6 +34,7 @@ Ext.define('fourneth.ims.procurement.ProcurementController',{
         view.down('form').loadRecord(record);
     },
     updateProcuremen : function(button) {
+        console.log('start updateProcurement()')
         var win = button.up('form');
         var form1 = win.down('form').getForm();
         //check of the form has any errors

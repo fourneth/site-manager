@@ -1,5 +1,8 @@
 package com.fourneth.ims.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created with IntelliJ IDEA.
  * User: romith
@@ -7,11 +10,12 @@ package com.fourneth.ims.domain;
  * Time: 11:56 PM
  * To change this template use File | Settings | File Templates.
  */
+@Entity
+@Table(name = "procurement_comity")
 public class ProcurementComity extends EntityClass {
 
     private String name;
     private String code;
-    private String organizationUnitId;
 
 
     public String getName() {

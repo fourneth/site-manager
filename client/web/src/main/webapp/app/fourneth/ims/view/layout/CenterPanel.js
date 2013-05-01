@@ -5,7 +5,10 @@ Ext.define('fourneth.ims.view.layout.CenterPanel', {
         alias: 'widget.center',
         requires : ['fourneth.ims.login.LoginDetails'],
         margins: '0 0 0 5',
-        bodyPadding: 10,
+//        margins: '0 0 0 5',
+        title: 'PR    ddd  Form',
+        header : false,
+        bodyPadding: 1,
 
         initComponent : function () {
             console.log('center panel init function');

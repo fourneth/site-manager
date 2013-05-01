@@ -17,13 +17,13 @@ Ext.define('fourneth.ims.view.layout.EastPanel',{
 //            ]
 //        }
     ],
-    animCollapse: true,
-    collapsible: true,
+    animCollapse: false,
+    collapsible: false,
     split: true,
     width: 300,
     minSize: 175,
     maxSize: 400,
-    margins: '0 5 0 0',
+//    margins: '0 5 0 0',
 //    activeTab: 1,
     tabPosition: 'top',
     items: [

@@ -1,6 +1,8 @@
 package com.fourneth.ims.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,6 +11,8 @@ import javax.persistence.Column;
  * Time: 11:55 PM
  * To change this template use File | Settings | File Templates.
  */
+@Entity
+@Table(name = "project")
 public class Project extends EntityClass {
 
     @Column

@@ -21,21 +21,26 @@ Ext.define('fourneth.ims.view.layout.BaseLayout',{
         msgTarget:'side'
     },
 
-    items:[{
-        xtype:'north',
-        region:'north'
-    },{
-        xtype:'south',
-        region:'south'
-
-    },{
-        region: 'east',
-        xtype: 'east'
-    },{
-        region: 'west',
-        xtype:'west'
-    },{
-        region:'center',
-        xtype:'center'
-    }]
+    items:[
+        {
+            xtype:'north',
+            region:'north'
+        },
+//        {
+//            xtype:'south',
+//            region:'south'
+//
+//        }
+//        ,{
+//            region: 'east',
+//            xtype: 'east'
+//        },
+//        {
+//            region: 'west',
+//            xtype:'west'
+//        },
+        {
+            region:'center',
+            xtype:'center'
+        }]
 })

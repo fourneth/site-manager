@@ -7,7 +7,7 @@ Ext.define('fourneth.ims.view.layout.MenuBar', {
         'fourneth.ims.site.SiteEdit'
     ],
     alias: 'widget.north',
-    margins: '5 5 5 5',
+//    margins: '5 5 5 5',
     height: 30,
     columnWidth: .15,
     items: [

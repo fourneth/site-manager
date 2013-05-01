@@ -2,12 +2,14 @@ package com.fourneth.ims.controller;
 
 import com.fourneth.ims.domain.Employee;
 import com.fourneth.ims.repository.EmployeeRepository;
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,11 +23,11 @@ public class SampleController {
     private EmployeeRepository er;
 
     @RequestMapping(method = RequestMethod.GET, value = "/employee/{id}", produces = "application/json")
-    public @ResponseBody Employee employee(@PathVariable int id) {
+    public @ResponseBody Employee employee(@PathVariable long id) {
 
         logger.info("Employee get request received id [{}]", id);
 
-        return er.findById(id);
+        return er.findOne(id);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/employee/",
@@ -39,6 +41,6 @@ public class SampleController {
     @RequestMapping(method = RequestMethod.GET, value = "/employees", produces = "application/json")
     public @ResponseBody List<Employee> findAll() {
         logger.info("Employee get request received.....");
-        return er.findAll();
+        return Lists.newArrayList(er.findAll());
     }
 }
