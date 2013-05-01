@@ -25,6 +25,7 @@ Ext.define('fourneth.ims.procurement.ProcurementEdit', {
                             anchor: '60%'
                         },
                         margin: 10,
+                        layout:'hbox',
                         items: [
                             {
                                 xtype: 'textfield',
