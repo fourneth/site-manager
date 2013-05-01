@@ -1,5 +1,9 @@
 package com.fourneth.ims.domain;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -13,28 +17,29 @@ import java.io.Serializable;
  * To change this template use File | Settings | File Templates.
  */
 @MappedSuperclass
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class EntityClass implements Serializable {
 
     @Id
     @Column
-    @NotNull
     @GeneratedValue
-    private long id;
+    private Long id;
     @Version
     private int version;
     @Column(name = "created_time")
     @NotNull
-    private long createdTime;
+    private Long createdTime;
     @Column(name = "updated_time")
     private long updatedTime;
     @Column(name = "organization_id") @NotNull @Size(max = 50)
     private String organizationId;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -50,7 +55,7 @@ public class EntityClass implements Serializable {
         return updatedTime;
     }
 
-    public void setUpdatedTime(long updatedTime) {
+    public void setUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
     }
 
@@ -58,7 +63,7 @@ public class EntityClass implements Serializable {
         return createdTime;
     }
 
-    public void setCreatedTime(long createdTime) {
+    public void setCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
     }
 
@@ -77,13 +82,18 @@ public class EntityClass implements Serializable {
 
         EntityClass that = (EntityClass) o;
 
-        return id == that.id && version == that.version;
+        return version == that.version
+                && !(id != null ? !id.equals(that.id) : that.id != null)
+                && !(organizationId != null
+                    ? !organizationId.equals(that.organizationId)
+                    : that.organizationId != null);
 
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + version;
         result = 31 * result + (organizationId != null ? organizationId.hashCode() : 0);
         return result;
     }
