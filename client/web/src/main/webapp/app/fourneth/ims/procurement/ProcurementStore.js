@@ -4,6 +4,6 @@ Ext.define('fourneth.ims.procurement.ProcurementStore', {
     autoLoad: true,
     proxy: {
         type: 'localstorage',
-        id:'myProxyKey'
+        id:'procurementAdd'
     }
 });

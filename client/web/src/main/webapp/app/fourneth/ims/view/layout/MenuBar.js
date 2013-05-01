@@ -62,7 +62,17 @@ Ext.define('fourneth.ims.view.layout.MenuBar', {
                                         view = Ext.create('fourneth.ims.employee.EmployeeEdit');
                                     }
                                     _center_panel.add(view);
-                                    console.log('employee view',view);
+                                }
+                            },
+                            {
+                                text: 'View Employees',
+                                action: 'empList',
+                                handler: function () {
+                                    var view = Ext.getCmp('empEdit');
+                                    if(view == null){
+                                        view = Ext.create('fourneth.ims.employee.EmployeeList');
+                                    }
+                                    _center_panel.add(view);
                                 }
                             },
                             {

@@ -9,20 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
-public class SampleController {
+public class EmployeeController {
 
-    private static final Logger logger = LoggerFactory.getLogger(SampleController.class);
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
     @Autowired
     private EmployeeRepository er;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/employee/{id}", produces = "application/json")
+    @RequestMapping(method = RequestMethod.GET, value = "/employees/{id}", produces = "application/json")
     public @ResponseBody Employee employee(@PathVariable long id) {
 
         logger.info("Employee get request received id [{}]", id);
@@ -30,7 +27,7 @@ public class SampleController {
         return er.findOne(id);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/employee/",
+    @RequestMapping(method = RequestMethod.PUT, value = "/employees/",
             consumes = "application/json", produces = "application/json")
     public @ResponseBody Employee create(@RequestBody Employee e) {
         logger.info("Employee create request received [{}]", e);

@@ -3,7 +3,12 @@ Ext.define('fourneth.ims.employee.EmployeeStore', {
     model: 'fourneth.ims.employee.EmployeeModel'  ,
     autoLoad: true,
     proxy: {
-        type: 'localstorage',
-        id:'employeeAdd'
+        type: 'rest',
+        url: '/ims/employees',
+        reader: {
+            type: 'json',
+            root: 'users'
+        }
     }
+
 });

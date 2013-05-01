@@ -14,7 +14,7 @@ Ext.define('fourneth.ims.employee.EmployeeController',{
             'north button[action=empAdd]':{
                 click: this.addEmp
             },
-            'empEdit butoon[action=empSave]':{
+            'empEdit button[action=empSave]':{
                 click:this.updateEmp
             },
             'empList':{
@@ -22,24 +22,24 @@ Ext.define('fourneth.ims.employee.EmployeeController',{
             }
         })
     },
-    addEmp:function(button){
-        var view = Ext.widget('empEdit');
+    addEmp:function(){
+
     },
     updateEmp:function(button) {
         console.log('start updateEmp()');
         var win = button.up('form');
         console.log('pass win',win);
-        var form1 = win.down('form').getForm();
-        console.log('pass form1',form1);
+        var employeeEditForm = win.down('form').getForm();
+        console.log('pass employeeEditForm',employeeEditForm);
         //check of the form has any errors
-        if (form1.isValid()) {
+        if (employeeEditForm.isValid()) {
             //get the record
-            console.log('form1 is valid');
-            var record = form1.getRecord();
-            console.log('record is '+record+'')
+            console.log('employeeEditForm is valid');
+            var record = employeeEditForm.getRecord();
+            console.log('record is '+record+'');
             //get the form values
-            var values = form1.getValues();
-            console.log('value is '+values+'')
+            var values = employeeEditForm.getValues();
+            console.log('value is '+values+'');
             //if a new record
             if(!record){
                 console.log('start newRecord is');
@@ -56,14 +56,14 @@ Ext.define('fourneth.ims.employee.EmployeeController',{
             win.close();
             //save the data to the Web local Storage
             this.getStore('fourneth.ims.employee.EmployeeStore').sync();
+        } else {
+            Ext.MessageBox.alert('Error', 'Please correct errors before saving.');
+//            Ext.example.msg('Correct the errors', 'Please complete from before proceeding.');
         }
     },
-    editEmp:function(button){
+    editEmp:function(){
         var view = Ext.widget('empEdit');
         view.down('form').loadRecord(record);
     }
-},
-    function(){
-        console.log('Employee Control is renderd');
-    }
-)
+}
+);

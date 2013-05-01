@@ -8,11 +8,11 @@ Ext.define('fourneth.ims.procurement.ProcurementController',{
     ],
 
     stores:[
-        'fourneth.ims.procurement.ServiceProviderStore'
+        'fourneth.ims.procurement.ProcurementStore'
     ],
 
     models:[
-        'fourneth.ims.serviceProvider.ServiceProviderModel'
+        'fourneth.ims.serviceProvider.ProcurementModel'
     ],
 
     init:function(){
@@ -33,7 +33,7 @@ Ext.define('fourneth.ims.procurement.ProcurementController',{
         var view = Ext.widget('procurementEdit');
         view.down('form').loadRecord(record);
     },
-    updateProcuremen : function(button) {
+    updateProcurement : function(button) {
         console.log('start updateProcurement()')
         var win = button.up('form');
         var form1 = win.down('form').getForm();
@@ -59,7 +59,7 @@ Ext.define('fourneth.ims.procurement.ProcurementController',{
             this.getStore('fourneth.ims.procurement.ProcurementStore').sync();
         }
     },
-    addProcuremen : function(button) {
+    addProcurement : function(button) {
         var view = Ext.widget('procurementEdit');
     }
 
