@@ -1,6 +1,6 @@
 Ext.define('fourneth.ims.employee.EmployeeList', {
         extend: 'Ext.grid.Panel',
-        store: Ext.getStore('fourneth.ims.employee.EmployeeStore'),
+
         alias: 'widget.employeeList',
         id: 'employeeList',
         title: 'Employees',
@@ -9,26 +9,9 @@ Ext.define('fourneth.ims.employee.EmployeeList', {
         multiSelect: true,
         stateId: 'stateGrid',
 
-        dockedItems: [
-            {
-                xtype: 'pagingtoolbar',
-                store: Ext.create('fourneth.ims.employee.EmployeeStore'),
-                dock: 'bottom',
-                displayInfo: true,
-                items: [
-                    {
-                        xtype: 'tbseparator'
-                    },
-                    {
-                        xtype: 'button',
-                        text: 'Create Employee',
-                        action: 'empAdd'
-                    }
-                ]
-            }
-        ],
-
         initComponent: function () {
+            this.employeeListStore = Ext.create('fourneth.ims.employee.EmployeeStore');
+            this.store = this.employeeListStore;
             this.columns = [
                 {
                     header: 'id',
@@ -107,6 +90,24 @@ Ext.define('fourneth.ims.employee.EmployeeList', {
 //                hidden   : CECBLayout.model.LoggedInUser.permissions['view.user.list.password.view']
 //
 //                }
+            ];
+            this.dockedItems = [
+                {
+                    xtype: 'pagingtoolbar',
+                    store: this.employeeListStore,
+                    dock: 'bottom',
+                    displayInfo: true,
+                    items: [
+                        {
+                            xtype: 'tbseparator'
+                        },
+                        {
+                            xtype: 'button',
+                            text: 'Create Employee',
+                            action: 'empAdd'
+                        }
+                    ]
+                }
             ];
             this.callParent(arguments);
         }
