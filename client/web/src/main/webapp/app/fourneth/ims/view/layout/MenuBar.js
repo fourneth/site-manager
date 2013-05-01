@@ -33,23 +33,23 @@ Ext.define('fourneth.ims.view.layout.MenuBar', {
                                 handler: function () {
 
                                     var view = Ext.getCmp('procurementEdit');
-                                    if (view == null) {
+                                    if(view == null){
                                         view = Ext.create('fourneth.ims.procurement.ProcurementEdit');
                                     }
                                     _center_panel.add(view);
-                                    console.log('xxxxx', view);
+                                    console.log('xxxxx',view);
                                 }
                             },
                             {
                                 text: 'Create Site',
                                 action: 'siteAdd',
-                                handler: function () {
+                                handler:function(){
                                     var view = Ext.getCmp('siteEdit');
-                                    if (view == null) {
+                                    if(view == null){
                                         _center_panel.add(Ext.create('fourneth.ims.site.SiteEdit'));
                                     }
 //                                    _center_panel.add(view);
-                                    console.log('site view', view);
+                                    console.log('site view',view);
 
                                 }
                             },
@@ -58,19 +58,29 @@ Ext.define('fourneth.ims.view.layout.MenuBar', {
                                 action: 'empAdd',
                                 handler: function () {
                                     var view = Ext.getCmp('empEdit');
-                                    if (view == null) {
+                                    if(view == null){
                                         view = Ext.create('fourneth.ims.employee.EmployeeEdit');
                                     }
                                     _center_panel.add(view);
-                                    console.log('employee view', view);
+                                }
+                            },
+                            {
+                                text: 'View Employees',
+                                action: 'empList',
+                                handler: function () {
+                                    var view = Ext.getCmp('empEdit');
+                                    if(view == null){
+                                        view = Ext.create('fourneth.ims.employee.EmployeeList');
+                                    }
+                                    _center_panel.add(view);
                                 }
                             },
                             {
                                 text: 'Create Suppliers',
                                 action: 'supAdd',
-                                handler: function () {
+                                handler:function(){
                                     var view = Ext.getCmp('supEdit');
-                                    if (view == null) {
+                                    if(view == null){
                                         view = Ext.create('fourneth.ims.suppliers.SupplierEdit');
                                     }
                                     _center_panel.add(view);

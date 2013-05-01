@@ -1,33 +1,32 @@
-Ext.define('fourneth.ims.employee.EmployeeList', {
+Ext.define('fourneth.ims.employee.EmployeeList' ,{
         extend: 'Ext.grid.Panel',
-        store: Ext.create('fourneth.ims.employee.EmployeeStore'),
+        store : Ext.create('fourneth.ims.employee.EmployeeStore'),
         alias: 'widget.empList',
-        id: 'empList',
+        id:'empList',
+        title : 'Employees',
         stateful: true,
         collapsible: true,
         multiSelect: true,
         stateId: 'stateGrid',
 
-        dockedItems: [
-            {
-                xtype: 'pagingtoolbar',
-                store: Ext.create('fourneth.ims.employee.EmployeeStore'),
-                dock: 'bottom',
-                displayInfo: true,
-                items: [
-                    {
-                        xtype: 'tbseparator'
-                    },
-                    {
-                        xtype: 'button',
-                        text: 'Create Employee',
-                        action: 'empAdd'
-                    }
-                ]
-            }
-        ],
+        dockedItems: [{
+            xtype: 'pagingtoolbar',
+            store : Ext.create('fourneth.ims.employee.EmployeeStore'),
+            dock: 'bottom',
+            displayInfo: true,
+            items: [
+                {
+                    xtype: 'tbseparator'
+                },
+                {
+                    xtype : 'button',
+                    text: 'Create Employee',
+                    action: 'empAdd'
+                }
+            ]
+        }],
 
-        initComponent: function () {
+        initComponent: function() {
             this.columns = [
                 {
                     header: 'empId',
@@ -111,7 +110,7 @@ Ext.define('fourneth.ims.employee.EmployeeList', {
         }
 
     },
-    function () {
+    function(){
         console.log('Employee List rendered');
     }
 

@@ -18,36 +18,30 @@ Ext.define('fourneth.ims.procurement.ProcurementEdit', {
                 defaults: {
                     anchor: '100%' },
                 xtype: 'form',
-                frame:true,
-//                layout:'hbox',
                 items: [
                     {
                         xtype: 'fieldset',
                         defaults: {
-                            anchor: '100%' },
+                            anchor: '60%'
+                        },
                         margin: 10,
                         items: [
                             {
                                 xtype: 'textfield',
                                 name: 'procurmentRequestNo',
                                 fieldLabel: 'REQUISITION/PROCURMENT REQUEST NO.',
-                                allowBlank: false,
-                                readOnly:true
+                                allowBlank: false
                             },
                             {
                                 xtype: 'textfield',
                                 name: 'to',
                                 fieldLabel: 'TO(Contracting office, Name and Location)',
-                                allowBlank: true,
-                                readOnly:true
+                                allowBlank: true
                             },
                             {
-                                xtype: 'combobox',
+                                xtype: 'textfield',
                                 name: 'from',
                                 fieldLabel: 'From(Requisitioning office, Name and Location)',
-                                store:Ext.create('fourneth.ims.site.SiteStore'),
-                                displayField:'projectName',
-                                valueField:'procurmentRequestNo',
                                 allowBlank: true
                             },
                             {
@@ -56,15 +50,18 @@ Ext.define('fourneth.ims.procurement.ProcurementEdit', {
                                 fieldLabel: 'DATE PREPARED',
                                 allowBlank: false
                             },
-                            {xtype: 'textfield',
+                            {
+                                xtype: 'textfield',
                                 name: 'fileNo',
-                                fieldLabel: 'File No'}
-                        ]},
+                                fieldLabel: 'File No'
+                            }
+                        ]
+                    },
                     {
                         xtype: 'fieldset',
                         margin: 10,
-                        defaults: {
-                            anchor: '100%' },
+//                        defaults: {
+//                            anchor: '100%' },
                         items: [
                             {
                                 xtype: 'textfield',
@@ -132,9 +129,9 @@ Ext.define('fourneth.ims.procurement.ProcurementEdit', {
                             },
                             {
                                 title: 'Project/Site Details',
-                                defaults: {
-                                    width: 230
-                                },
+//                                defaults: {
+//                                    width: 230
+//                                },
                                 defaultType: 'textfield',
 
                                 items: [

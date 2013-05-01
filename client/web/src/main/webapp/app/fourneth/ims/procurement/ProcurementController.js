@@ -33,8 +33,8 @@ Ext.define('fourneth.ims.procurement.ProcurementController', {
         var view = Ext.widget('procurementEdit');
         view.down('form').loadRecord(record);
     },
-
-    updateProcurement: function (button) {
+    updateProcurement : function(button) {
+        console.log('start updateProcurement()')
         var win = button.up('form');
         var form1 = win.down('form').getForm();
         //check of the form has any errors
