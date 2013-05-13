@@ -2,7 +2,8 @@ Ext.define('fourneth.ims.site.SiteList', {
     extend: 'Ext.grid.Panel',
     store: Ext.create('fourneth.ims.site.SiteStore'),
     alias: 'widget.siteList',
-    id: 'siteList',
+    id: 'siteList' ,
+    title:'Site Summary View',
 
     stateful: true,
     collapsible: true,

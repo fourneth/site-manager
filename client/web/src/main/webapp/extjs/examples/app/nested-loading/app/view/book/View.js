@@ -28,7 +28,7 @@ Ext.define('Books.view.book.View', {
                 margin: '0 20 0 0',
                 width : 250,
                 height: 308
-            }, {
+            },{
                 xtype: 'component',
                 tpl: [
                     '<div class="name">{name} <span>${price}</span></div>',

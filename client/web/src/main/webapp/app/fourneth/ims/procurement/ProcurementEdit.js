@@ -1,7 +1,7 @@
 Ext.define('fourneth.ims.procurement.ProcurementEdit', {
     extend: 'Ext.form.Panel',
     alias: 'widget.procurementEdit',
-    id: 'procurementEdit',
+//    id: 'procurementEdit',
     title: 'Procurement Add',
     layout: 'fit',
     closable: true,
@@ -25,7 +25,7 @@ Ext.define('fourneth.ims.procurement.ProcurementEdit', {
                             anchor: '60%'
                         },
                         margin: 10,
-                        layout:'hbox',
+                        layout:'vbox',
                         items: [
                             {
                                 xtype: 'textfield',

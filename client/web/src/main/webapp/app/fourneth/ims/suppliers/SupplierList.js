@@ -7,6 +7,7 @@ Ext.define('fourneth.ims.suppliers.SupplierList', {
     collapsible: true,
     multiSelect: true,
     stateId: 'stateGrid',
+    title:'Supplers Summary',
 
     dockedItems: [
         {

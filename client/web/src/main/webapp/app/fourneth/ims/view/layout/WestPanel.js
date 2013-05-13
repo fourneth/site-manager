@@ -17,7 +17,6 @@ Ext.define('fourneth.ims.view.layout.WestPanel', {
     maxWidth: 400,
     collapsible: true,
     animCollapse: true,
-//    margins: '0 0 0 5',
     layout: 'accordion',
     init: function () {
     },

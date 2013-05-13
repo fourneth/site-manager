@@ -7,10 +7,9 @@ Ext.define('fourneth.ims.site.SiteEdit', {
     autoShow: true,
     autoScroll: true,
     scroll: true,
-    width: 950,
     closable: true,
-//    collapsible: true,
-
+    bodyPadding:10,
+    iconCls:'settings',
     initComponent: function () {
         this.items = [
             {
@@ -19,6 +18,7 @@ Ext.define('fourneth.ims.site.SiteEdit', {
                 defaultType: 'textfield',
                 autoScroll: true,
                 margin: 5,
+                bodyPadding:10,
                 items: [
                     {
                         name: 'projectName',

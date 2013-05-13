@@ -24,4 +24,5 @@ Ext.application(
             _app = this;
             console.log(fourneth.ims.login.LoginDetails.permissions['general.permission']);
         }
-    });
+    },
+    console.log('app.js rendered'));

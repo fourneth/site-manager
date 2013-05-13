@@ -23,15 +23,19 @@ Ext.define('fourneth.ims.procurement.ProcurementController', {
             'procurementEdit button[action=procSave]': {
                 click: this.updateProcurement
             },
-            'serviceProviderList': {
+            'procList': {
                 itemdblclick: this.editProcurement
             }
         })
     },
 
     editProcurement: function (grid, record) {
+
         var view = Ext.widget('procurementEdit');
+            console.log('if view is',view);
         view.down('form').loadRecord(record);
+        view.render(document.body);
+
     },
     updateProcurement : function(button) {
         console.log('start updateProcurement()')

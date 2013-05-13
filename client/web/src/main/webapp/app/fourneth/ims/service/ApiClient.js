@@ -19,6 +19,8 @@ Ext.define('fourneth.ims.service.ApiClient', {
                 success : function (resp) {
                     console.log("login response ", resp.responseText);
                     response = resp;
+        var logingValue = fourneth.ims.service.Common.alreadyLoggedIn();
+        console.log('login value is',logingValue);
                 }
             });
 

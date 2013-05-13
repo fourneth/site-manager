@@ -14,5 +14,4 @@ Ext.define('fourneth.ims.employee.EmployeeStore', {
             type: 'json'
         }
     }
-
 });

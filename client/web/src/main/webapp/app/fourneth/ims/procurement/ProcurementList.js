@@ -3,6 +3,7 @@ Ext.define('fourneth.ims.procurement.ProcurementList', {
     store: Ext.create('fourneth.ims.procurement.ProcurementStore'),
     alias: 'widget.procList',
     id: 'procList',
+    title:'Procurement Summary',
 
     stateful: true,
     collapsible: true,
@@ -14,17 +15,7 @@ Ext.define('fourneth.ims.procurement.ProcurementList', {
             xtype: 'pagingtoolbar',
             store: Ext.create('fourneth.ims.procurement.ProcurementStore'),
             dock: 'bottom',
-            displayInfo: true,
-            items: [
-                {
-                    xtype: 'tbseparator'
-                },
-                {
-                    xtype: 'button',
-                    text: 'Create Service Provider',
-                    action: 'ProcurementAdd'
-                }
-            ]
+            displayInfo: true
         }
     ],
 
@@ -75,6 +66,15 @@ Ext.define('fourneth.ims.procurement.ProcurementList', {
             {
                 header: 'requiredItems',
                 dataIndex: 'requiredItems',
+                flex: 1,
+                hidden:true
+//                hidden   : CECBLayout.model.LoggedInUser.permissions['view.user.list.password.view']
+
+            },
+
+            {
+                header: 'fileNo',
+                dataIndex: 'fileNo',
                 flex: 1
 //                hidden   : CECBLayout.model.LoggedInUser.permissions['view.user.list.password.view']
 
@@ -96,13 +96,6 @@ Ext.define('fourneth.ims.procurement.ProcurementList', {
             {
                 header: 'rejected',
                 dataIndex: 'rejected',
-                flex: 1
-//                hidden   : CECBLayout.model.LoggedInUser.permissions['view.user.list.password.view']
-
-            },
-            {
-                header: 'fileNo',
-                dataIndex: 'fileNo',
                 flex: 1
 //                hidden   : CECBLayout.model.LoggedInUser.permissions['view.user.list.password.view']
 

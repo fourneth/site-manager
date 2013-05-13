@@ -31,7 +31,7 @@ public class EntityClass implements Serializable {
     @NotNull
     private Long createdTime;
     @Column(name = "updated_time")
-    private long updatedTime;
+    private Long updatedTime;
     @Column(name = "organization_id") @NotNull @Size(max = 50)
     private String organizationId;
 
@@ -51,7 +51,7 @@ public class EntityClass implements Serializable {
         this.version = version;
     }
 
-    public long getUpdatedTime() {
+    public Long getUpdatedTime() {
         return updatedTime;
     }
 
@@ -59,7 +59,7 @@ public class EntityClass implements Serializable {
         this.updatedTime = updatedTime;
     }
 
-    public long getCreatedTime() {
+    public Long getCreatedTime() {
         return createdTime;
     }
 

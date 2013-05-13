@@ -22,7 +22,7 @@ Ext.define('Books.view.book.SideBar', {
             store: '',
             itemSelector: '.product',
             tpl: [
-                '<div class="sidebar-title">Books</div>',
+                '<div class="sidebar-title">Procurements</div>',
                 '<tpl for=".">',
                     '<div class="product">{name}</div>',
                 '</tpl>'
